@@ -1,0 +1,10 @@
+h1 {
+  color: rgb(0, 255, 0);
+}
+
+head {
+  cursor: url("photo/cursor\ truite.png")
+}
+body{
+  cursor: url("photo/cursor\ truite.png"), default;
+}
