@@ -12,3 +12,7 @@ body{
 body{
   background-image: url("photo/IMG_2803.jpg");
 }
+
+img{
+  opacity: 0.5;
+}
