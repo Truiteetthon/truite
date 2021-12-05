@@ -4,7 +4,7 @@ h1 {
 head {
   cursor: url("photo/cursor\ truite.png")
 }
-body{
+html{
   cursor: url("photo/cursor\ truite.png"), default;
 }
 body{
