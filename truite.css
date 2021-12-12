@@ -10,19 +10,17 @@ html{
 }
 body{
   background-image:url("photo/IMG_2803.jpg");
-  font-family: sans-serif;
-  font-variant: small-caps;
+ /*font-family: sans-serif;
+   font-variant: small-caps; */
 }
 img{
-  width:fit-content ;
+  width: 300px ;
 }
 img{
   opacity: 1
   
 }
-h6 {
-  color: rgb(189,189,100);
-}
+
 a{
   color: rgb(255, 255, 255);
 }
