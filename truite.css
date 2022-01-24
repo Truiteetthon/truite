@@ -1,7 +1,4 @@
-h1 {
-  color: rgb(255, 255, 255);
-  margin: 20px;
-}
+
 head {
   cursor: url("photo/cursor\ truite.png")
 }
@@ -23,4 +20,21 @@ img{
 
 a{
   color: rgb(255, 255, 255);
+}
+h4{
+  font: size 20vw;
+}
+div.gauche {
+  position: absolute;
+  left: 90%;
+  top: 0%;
+  /* bring your own prefixes */
+  transform: translate(-100%, 0%);
+
+}
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0%;
+  top: 0%;
 }
