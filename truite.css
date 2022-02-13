@@ -22,12 +22,12 @@ a{
   color: rgb(255, 255, 255);
 }
 h4{
-  font: size 20vw;
+  font: size 1vw;
 }
 div.gauche {
   position: absolute;
   left: 90%;
-  top: -50%;
+  top: 0%;
   /* bring your own prefixes */
   transform: translate(-100%, 0%);
 
