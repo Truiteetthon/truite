@@ -8,8 +8,8 @@ html{
 body{
  background-image:url("photo/IMG_2803.jpg");*/
   /* font-family: sans-serif;
-   font-variant: small-caps; */
-}
+   font-variant: small-caps; 
+}*/
 img{
   width: 300px ;
 }
@@ -19,7 +19,7 @@ img{
 }
 
 a{
-  color: rgb(255, 255, 255);
+  color: rgb(130, 174, 255);
 }
 h4{
   font: size 1vw;
