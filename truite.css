@@ -6,7 +6,7 @@ html{
   cursor: url("photo/cursor\ truite.png"), default;
 }
 */body{
- background-image:linear-gradient(rgb(0, 118, 122), rgb(206, 24, 0), rgb(8, 196, 8));
+ background-image:linear-gradient(rgb(0, 0, 255), rgb(255, 0, 0), rgb(0, 255, 0));
    font-family: sans-serif;
    font-variant: small-caps; 
 }
