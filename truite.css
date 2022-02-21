@@ -5,11 +5,11 @@
 html{
   cursor: url("photo/cursor\ truite.png"), default;
 }
-body{
- background-image:url("photo/IMG_2803.jpg");*/
-  /* font-family: sans-serif;
+*/body{
+ background-image:linear-gradient(rgb(0, 118, 122), rgb(206, 24, 0), rgb(8, 196, 8));
+   font-family: sans-serif;
    font-variant: small-caps; 
-}*/
+}
 img{
   width: 300px ;
 }
@@ -17,7 +17,14 @@ img{
   opacity: 1
   
 }
+div.centré {
+  position: fixed;
+  top: 50%;
+  left: 50%;
 
+  transform: translate(-50%, -50%);
+
+}
 a{
   color: white;
 }
