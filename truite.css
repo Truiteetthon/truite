@@ -13,8 +13,13 @@ html{
    font-family: sans-serif;
    font-variant: small-caps; 
 }
-img{
-  width: 300px ;
+.fit-image{
+  width: 150px;
+}
+#square {
+  width: 150px;
+  height: 150px;
+  background: rgb(134, 134, 134);
 }
 img{
   opacity: 1
