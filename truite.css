@@ -14,7 +14,9 @@ html{
    font-variant: small-caps; 
 }
 .fit-image{
-  width: 150px;
+  width:50%;
+  min-width: 100px;
+  max-width: 300px;
 }
 #square {
   width: 150px;
@@ -24,6 +26,18 @@ html{
 img{
   opacity: 1
   
+}
+div.group {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+div.theme {
+  padding-left: 20px;
+  padding-top: 2%;
+  max-width: fit-content;
+  display: inline-block;
+  align-items:center;
 }
 div.centré {
   position: fixed;
