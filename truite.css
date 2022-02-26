@@ -1,17 +1,10 @@
 
-/*head {
-  cursor: url("photo/cursor\ truite.png")
-}
-html{
-  cursor: url("photo/cursor\ truite.png"), default;
-}
-*/body{
- background-image:linear-gradient(112deg, rgb(197, 146, 255) 0%,rgb(124, 0, 52)13%, rgb(0, 175, 152)20%, 
- rgb(224, 0, 194) 80%, rgb(0, 0, 255) 80%, rgb(124,0,52)100%
-
-  );
+body{
+ /*background-image:linear-gradient(112deg, rgb(197, 146, 255) 0%,rgb(124, 0, 52)13%, rgb(0, 175, 152)20%, 
+ rgb(224, 0, 194) 80%, rgb(0, 0, 255) 80%, rgb(124,0,52)100%);*/
    font-family: sans-serif;
    font-variant: small-caps; 
+   /*height: 100%;*/
 }
 .fit-image{
   width:50%;
@@ -23,15 +16,10 @@ html{
   height: 150px;
   background: rgb(134, 134, 134);
 }
-img{
-  opacity: 1
-  
-}
 div.group {
   display: grid;
   grid-auto-flow: column;
 }
-
 div.theme {
   padding-left: 20px;
   padding-top: 2%;
@@ -45,21 +33,19 @@ div.centré {
   left: 50%;
 
   transform: translate(-50%, -50%);
-
 }
 a{
   color: white;
 }
 h4{
   font: size 1vw;
+  color: white;
 }
-div.gauche {
-  position: absolute;
-  left: 90%;
-  top: 0%;
-  /* bring your own prefixes */
-  transform: translate(-100%, 0%);
-
+h1{
+  color: white;
+}
+h2{
+  color: white;
 }
 div.sticky {
   position: -webkit-sticky;
