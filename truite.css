@@ -62,3 +62,7 @@ endpage{
   top: 100%;
   transform: translate(0%,-100%);
 }
+
+fixed{
+position: fixed;
+}
