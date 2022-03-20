@@ -11,6 +11,9 @@ body{
   min-width: 100px;
   max-width: 300px;
 }
+.photo{
+  background-image: url(photo/IMG_2803.jpg);
+}
 #square {
   width: 150px;
   height: 150px;
@@ -53,4 +56,9 @@ div.sticky {
   left: 0%;
   top: 0%;
   transform: translate(0%,0%);
+}
+endpage{
+  position: fixed;
+  top: 100%;
+  transform: translate(0%,-100%);
 }
