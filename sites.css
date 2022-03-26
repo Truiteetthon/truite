@@ -1,3 +1,9 @@
+div.endpage {
+  position:fixed;
+  top: 100%;
+  transform: translate(0%, -102%)
+}
+
 div.centré {
     position: fixed;
     top: 50%;
@@ -8,5 +14,7 @@ div.centré {
   }
 
   a{
-    color:  rgb(130, 174, 255);
+    color:  rgb(255, 255, 255);
   }
+
+  

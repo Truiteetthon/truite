@@ -1,0 +1,47 @@
+
+
+.fit-image{
+  width:50%;
+  min-width: 100px;
+  max-width: 200px;
+}
+
+.square {
+  width: 50%;
+  height: 150px;
+  background: rgb(255, 255, 255);
+}
+div.group {
+  display: grid;
+  grid-auto-flow: column;
+}
+a{
+  color:rgb(255, 251, 251);
+}
+h2{
+  color: rgb(255, 255, 255);
+}
+h3{
+  color: rgb(255, 255, 255);
+}
+div.theme {
+  padding-left: 20px;
+  padding-top: 10%;
+  max-width: fit-content;
+  display: inline-block;
+  align-items:center;
+}
+
+div.blanc {
+  font-style: white;
+}
+
+endpage{
+  position: fixed;
+  top: 100%;
+  transform: translate(0%,-100%);
+}
+
+fixed{
+position: fixed;
+}
