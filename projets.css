@@ -57,7 +57,7 @@ endpage{
 }
 
 fixed{
-position: relative;
+position: fixed;
 }
 
 div.centré {
