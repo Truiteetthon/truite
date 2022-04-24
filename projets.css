@@ -80,3 +80,7 @@ div.centré {
 .quit {
   position: fixed;
 }
+
+.justify {
+  text-align: justify;
+}
