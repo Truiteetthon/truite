@@ -13,6 +13,9 @@
   position: relative;
 }
 
+fit-iamge:hover{
+  width: 300px;
+}
 .square {
   width: 50%;
   height: 50%;
