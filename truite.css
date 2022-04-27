@@ -21,6 +21,7 @@ body{
   left: 100%;
   transform: translate(-100%,-100%);
 }
+
 #square {
   width: 150px;
   height: 150px;
