@@ -13,8 +13,10 @@
   position: relative;
 }
 
-fit-iamge:hover{
-  width: 300px;
+.fit-image:hover, .fit-image:active {
+  transform: scale(3);
+  transition: 0.2s;
+  transition-timing-function: ease-in-out;
 }
 .square {
   width: 50%;
