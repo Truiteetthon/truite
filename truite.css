@@ -13,6 +13,8 @@ body{
 }
 .photo{
   background-image: url(photo/IMG_2803.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .language{
