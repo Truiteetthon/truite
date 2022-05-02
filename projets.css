@@ -15,7 +15,7 @@
 
 .fit-image:hover, .fit-image:active {
   transform: scale(3);
-  transition: 0.2s;
+  transition: scale 0.1s;
   transition-timing-function: ease-in-out;
 }
 .square {
