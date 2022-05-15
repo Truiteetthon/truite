@@ -17,15 +17,15 @@ body{
 
 .language{
   position: fixed;
-  top: 100%;
+  top: 0%;
   left: 100%;
-  transform: translate(-100%,-100%);
+  transform: translate(-100%,0%);
   color: orangered;
 }
 
 .title{
   position: fixed;
-  top: 15%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
@@ -68,12 +68,34 @@ div.sticky {
   top: 0%;
   transform: translate(0%,0%);
 }
-endpage{
+.endpage{
   position: fixed;
   top: 100%;
   transform: translate(0%,-100%);
 }
-
+.endpage-right{
+  position: fixed;
+  top: 100%;
+  left: 100%;
+  transform: translate(-100%,-100%);
+}
 fixed{
 position: fixed;
 }
+img{
+  min-width: 300px;
+    width:25%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+  
+}
+
+.link{
+  position: fixed;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
