@@ -17,17 +17,12 @@ body{
 
 .language{
   position: fixed;
+  top: 100%;
   left: 100%;
-  transform: translate(-100%,0%);
+  transform: translate(-100%,-100%);
   color: orangered;
 }
 
-.title{
-  position: fixed;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%,-0%);
-}
 #square {
   width: 150px;
   height: 150px;
@@ -39,7 +34,7 @@ div.group {
   -webkit-overflow-scrolling: touch;
 }
 a{
-  color:rgb(0, 0, 0);
+  color:white;
 }
 div.theme {
   padding-left: 20px;
