@@ -26,11 +26,13 @@ body{
 }
 
 .t0{
-  position: absolute;
-  top: 10%;
-  left: 0%;
+  position: fixed;
+  top: 5%;
+  left: 2%;
   transform: translate(0%,0%);
 }
+
+
 
 .t25{
   position: absolute;
@@ -67,9 +69,16 @@ div.group {
   display: grid;
 
 }
-a{
+.link{
   color:rgb(0, 0, 0);
-}
+  opacity: 0.25;
+  transition: 1s;
+ }
+ .link:hover{
+   opacity: 1;
+   text-decoration: none;
+ }
+
 div.theme {
   padding-left: 0px;
   padding-top: 0px;
@@ -120,7 +129,7 @@ img{
   
 }
 
-.link{
+.arrow{
   position: fixed;
   top: 95%;
   left: 50%;
