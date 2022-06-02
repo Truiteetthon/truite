@@ -11,8 +11,9 @@ body{
   min-width: 100px;
   max-width: 200px;
 }
-.photo{
-  background-image: url(photo/IMG_2803.jpg);
+
+#bg{
+  background: white;
 }
 
 
@@ -74,10 +75,11 @@ div.group {
   opacity: 0.25;
   transition: 1s;
  }
- .link:hover{
-   opacity: 1;
+ .link:hover {
+   background: cadetblue;
+  opacity: 1;
    text-decoration: none;
- }
+   }
 
 div.theme {
   padding-left: 0px;
@@ -120,13 +122,20 @@ position: fixed;
 }
 img{
   min-width: 300px;
-    width:25%;
+    width:50%;
    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     position: relative;
     scroll-snap-align: start;
   
+}
+.projects{
+  opacity: 1;
+  transition: 0.2s;
+}
+.projects:hover{
+  opacity: 0.25;
 }
 
 .arrow{
@@ -150,7 +159,10 @@ img{
   right: 10%;
   top: 10%;
   bottom: 10%;
+  transition: 1s;
 }
+
+
 
 html, body { height: 100%; }
 #outer {
@@ -159,10 +171,12 @@ html, body { height: 100%; }
   height: 100%;
   
 }
-#inner {
-  
-}
 
 snap {
   scroll-snap-type: y mandatory;
+}
+
+@font-face {
+  font-family: Pixeloid Sans;
+  src: url(Font/PixeloidSans-nR3g1.ttf);
 }
