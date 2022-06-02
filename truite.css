@@ -128,13 +128,14 @@ img{
     transform: translate(-50%, -50%);
     position: relative;
     scroll-snap-align: start;
+    transition: 0.2s
   
 }
 .projects{
   opacity: 1;
   transition: 0.2s;
 }
-.projects:hover{
+img:hover{
   opacity: 0.25;
 }
 
