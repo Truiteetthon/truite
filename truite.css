@@ -72,10 +72,30 @@ img{
     position: absolute;
     scroll-snap-align: start;
     transition: 0.2s
+
   
 }
   img:hover{
   opacity: 0.25;
+}
+.projects{
+  min-width: 300px;
+  width: 100%;
+  transform: translateY(-50%);
+}
+.lien{
+  color: rgba(255, 255, 255, 0);
+  min-width: 300px;
+  width:50%;
+  height: fit-content;
+  position: absolute;
+  align-items: center;
+}
+
+img .lien:hover{
+ 
+  opacity: 0.25; 
+
 }
 
 projet{
