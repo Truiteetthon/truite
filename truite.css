@@ -5,7 +5,6 @@ body{
   /* font-family: sans-serif;
    font-variant: small-caps; */
    /*height: 100%;*/
-
   
 }
 
@@ -43,6 +42,7 @@ div.group {
 }
 
 .link{
+  
   color:rgb(0, 0, 0);
   opacity: 0.25;
   transition: 1s;
@@ -53,6 +53,7 @@ div.group {
   opacity: 1;
    text-decoration: none;
 }
+
 
 div.centré {
   position: fixed;
@@ -127,4 +128,9 @@ projet{
 @font-face {
   font-family: Pixeloid Sans;
   src: url(Font/PixeloidSans-nR3g1.ttf);
+}
+
+@font-face {
+  font-family: Isometric Bold;
+  src: url(Font/3DIsometricBold-8MYYZ.ttf);
 }
