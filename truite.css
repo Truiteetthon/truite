@@ -31,7 +31,8 @@ html, body {
   left: 10px;
   transform: translate(0%,0%);
 }
-t{
+
+info{
   position: absolute;
 }
 
@@ -76,8 +77,22 @@ img{
 
   
 }
+
+@media (hover: hover) {
   img:hover{
-  opacity: 0.25;
+    opacity: 0.25;
+  }
+
+
+}
+
+@media (hover: none) {
+  info{
+    position: relative;
+    top: 25%;
+  }
+  
+
 }
 .projects{
   min-width: 300px;
