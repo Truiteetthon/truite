@@ -85,14 +85,11 @@ img{
 
 
 }
-
 @media (hover: none) {
   info{
     position: relative;
     top: 25%;
   }
-  
-
 }
 .projects{
   min-width: 300px;
