@@ -146,3 +146,8 @@ projet{
   font-family: Isometric Bold;
   src: url(Font/3DIsometricBold-8MYYZ.ttf);
 }
+
+@font-face {
+  font-family: Montserrat;
+  src: url(Font/Montserrat-Regular.ttf);
+}

@@ -5,7 +5,7 @@ div.endpage {
 }
 
 div.centré {
-    position: fixed;
+    position:absolute;
     top: 50%;
     left: 50%;
     /* bring your own prefixes */
