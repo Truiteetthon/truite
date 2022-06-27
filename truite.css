@@ -5,8 +5,12 @@ body{
   /* font-family: sans-serif;
    font-variant: small-caps; */
    /*height: 100%;*/
-  
+  overflow: hidden;
 }
+.body::-webkit-scrollbar{
+  display: none;
+}
+
 
 html, body { 
   height: 100%; 
@@ -19,17 +23,17 @@ html, body {
 
 .language{
   position: absolute;
-  top: 10%;
-  left: 100%;
+
   transform: translate(-100%,0%);
   color: orangered;
 }
 
 .t0{
   position: fixed;
-  top: 10px;
-  left: 10px;
-  transform: translate(0%,0%);
+  top: 50%;
+  left: 50%;
+  width: 33%;
+  transform: translate(-110%,-50%);
 }
 
 info{
@@ -44,15 +48,14 @@ div.group {
 
 .link{
   
-  color:rgb(0, 0, 0);
-  opacity: 0.25;
+  color: darkolivegreen;
   transition: 1s;
+  text-decoration: none;
+
 }
  
   .link:hover {
-   background: cadetblue;
-  opacity: 1;
-   text-decoration: none;
+   text-decoration: underline;
 }
 
 
@@ -67,10 +70,17 @@ div.blanc {
   font-style: white;
 }
 
+div.endpage {
+  position:absolute;
+margin-left: 25%;
+margin-right: 25%;
+
+  transform: translate(-50%);
+}
 
 img{
   min-width: 300px;
-    width:50%;
+    width:33%;
     position: absolute;
     scroll-snap-align: start;
     transition: 0.2s
@@ -99,7 +109,7 @@ img{
 .lien{
   color: rgba(255, 255, 255, 0);
   min-width: 300px;
-  width:50%;
+  width:33%;
   height: fit-content;
   position: absolute;
   align-items: center;
@@ -128,13 +138,13 @@ projet{
 }
 
 
-
 .outer {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 50%;
   height: 100%;
+  margin-left: 50%;
 }
 
 @font-face {
