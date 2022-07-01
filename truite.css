@@ -14,9 +14,10 @@ body{
 
 html, body { 
   height: 100%; 
-
 }
-
+body:hover{
+  cursor: crosshair;
+}
 #bg{
   background: white;
 }
@@ -87,6 +88,10 @@ img{
 
   
 }
+ li{
+  list-style-type:square;
+  color: rgba(255, 255, 255, 0);
+ }
 
 @media (hover: hover) {
   img:hover{
@@ -156,6 +161,15 @@ projet{
   margin-left: 50%;
 }
 
+.ham{
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  transform: translateX(-200%);
+}
+
+
+
 @font-face {
   font-family: Pixeloid Sans;
   src: url(Font/PixeloidSans-nR3g1.ttf);
@@ -170,7 +184,7 @@ projet{
   font-family: Montserrat;
   src: url(Font/Montserrat-Regular.ttf);
 }
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 800px) {
   .outer1{
     margin-top: 100%;
     display: flex;
@@ -191,26 +205,23 @@ projet{
   
   }
   .t0{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 75%;
-    transform: translate(-50%,-50%);
-  text-align: center;
+   display: none;
   }
+  .ham{
+transform: translateX(0%);
+  }
+  span.ham:hover + div.t0{
+    display: block;
+  }  
   }
   @media screen and (max-width: 500px) {
-    .outer1{
-      margin-top: 50%;
-  position: relative;
-    } 
-    .t0{
-      position: absolute;
-      top: 10px;
-      left: 50%;
-      width: 100%;
-      transform: translate(-50%,0%);
-    text-align: center;
-    font-size: smaller;
-    }
+    
   }
+
+span.ham:hover + div.t0{
+  display: block;
+}  
+
+a:hover{
+  cursor: none;
+}
