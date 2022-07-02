@@ -5,7 +5,7 @@ body{
   /* font-family: sans-serif;
    font-variant: small-caps; */
    /*height: 100%;*/
-  overflow: hidden;
+  
 }
 .body::-webkit-scrollbar{
   display: none;
@@ -17,6 +17,8 @@ html, body {
 }
 body:hover{
   cursor: crosshair;
+  overflow: hidden;
+  position: relative;
 }
 #bg{
   background: white;
@@ -57,6 +59,7 @@ div.group {
  
   .link:hover {
    text-decoration: underline;
+   cursor: none;
 }
 
 
@@ -121,9 +124,11 @@ img{
   align-items: center;
 }
 
-img .lien:hover{
+
+.lien:hover{
  
-  opacity: 0.25; 
+  opacity: 0.25;
+  cursor: crosshair; 
 
 }
 
@@ -222,6 +227,3 @@ span.ham:hover + div.t0{
   display: block;
 }  
 
-a:hover{
-  cursor: none;
-}
