@@ -7,19 +7,12 @@ body{
    /*height: 100%;*/
   
 }
-.body::-webkit-scrollbar{
-  display: none;
-}
 
 
 html, body { 
   height: 100%; 
 }
-body:hover{
-  cursor: crosshair;
-  overflow: hidden;
-  position: relative;
-}
+
 #bg{
   background: white;
 }
@@ -51,7 +44,7 @@ div.group {
 
 .link{
   
-  color: blue;
+  color: rgb(37, 161, 255);
   transition: 1s;
   text-decoration: none;
 
@@ -59,7 +52,6 @@ div.group {
  
   .link:hover {
    text-decoration: underline;
-   cursor: none;
 }
 
 
@@ -100,13 +92,20 @@ img{
   img:hover{
     opacity: 0.25;
   }
-
+  body {
+    overflow: hidden;
+  
+  }
 
 }
 @media (hover: none) {
   info{
     position: relative;
     top: 25%;
+  }
+  body {
+    overflow: visible;
+  
   }
 }
 
@@ -125,13 +124,6 @@ img{
 }
 
 
-.lien:hover{
- 
-  opacity: 0.25;
-  cursor: crosshair; 
-
-}
-
 projet{
   position: absolute;
   height: fit-content;
@@ -140,14 +132,12 @@ projet{
 }
 
 
-
 .arrow{
   position: fixed;
   top: 95%;
   left: 50%;
   transform: translate(-50%,-50%);
 }
-
 
 .outer {
   display: flex;
@@ -173,8 +163,6 @@ projet{
   transform: translateX(-200%);
 }
 
-
-
 @font-face {
   font-family: Pixeloid Sans;
   src: url(Font/PixeloidSans-nR3g1.ttf);
@@ -189,6 +177,8 @@ projet{
   font-family: Montserrat;
   src: url(Font/Montserrat-Regular.ttf);
 }
+
+
 @media screen and (max-width: 800px) {
   .outer1{
     margin-top: 100%;
