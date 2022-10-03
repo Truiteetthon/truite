@@ -11,6 +11,8 @@ body{
 
 html, body { 
   height: 100%; 
+  font-family: Noto;
+  font-size: small;
 }
 
 #bg{
@@ -44,9 +46,10 @@ div.group {
 
 .link{
   
-  color: rgb(37, 161, 255);
+  color: rgb(0, 0, 0);
   transition: 1s;
   text-decoration: none;
+  font-weight: bold;
 
 }
  
@@ -93,7 +96,7 @@ img{
     opacity: 0.25;
   }
   body {
-    overflow: hidden;
+    overflow: ;
   
   }
 
@@ -178,6 +181,10 @@ projet{
   src: url(Font/Montserrat-Regular.ttf);
 }
 
+@font-face {
+  font-family: Noto;
+  src: url(Font/NotoSansMono-VariableFont_wdth\,wght.ttf);
+}
 
 @media screen and (max-width: 800px) {
   .outer1{
