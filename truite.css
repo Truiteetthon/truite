@@ -227,8 +227,8 @@ span.ham:hover + div.t0{
 }  
 
 button {
-  height: 25px;
-  width: 25px;
+  height: 40px;
+  width: 40px;
   background-color: #111;
   border: 1px solid #000;
   border-radius: 50%;
