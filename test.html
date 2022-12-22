@@ -13,7 +13,9 @@
   
   
   
-<body style="margin-left: 30%; margin-right:30%; overflow: hidden;" onload="get_random_image()";>
+<body style="margin-left: 30%; margin-right:30%; overflow: hidden;   height: 100%;
+        display: flex;
+        flex-direction: column;" onload="get_random_image()";>
 <div style="margin-left:5px">Rémi Bonin
 <br>Technicien en Architecture
 
@@ -22,5 +24,8 @@
 </div>
 <div>
 <button onclick="location.reload()"><img  style="max-width: 100%;" id="random_image"/></button>
+<div style="border: 2px; overflow: auto; flex-shrink: 1;">test
 </div>
+</div>
+
 </body>
