@@ -1,14 +1,18 @@
 // Get all the images
 image_array = [
-    "RENDU 1 EXTERIEUR PANNEAU.jpg",
-    "BarJapon.JPG",
-    "DÉTAIL TOITURE TERRASSE.jpg",
+    
     "Favicon.jpg",
-    "IMG_0598.JPG",
+    "0001.jpg",
+    "0002.jpg",
+    "0003.jpg",
+    "0004.jpg",
+    "0005.jpg",
+    "Carte Naoshima.PNG",
+    "Val David.jpg",
+    "MAQUETTE.JPG",
     "mies library - 22724 - main.png",
-    "P7030219.JPG",
-    "P7100292.JPG",
-    "P7100294.JPG"
+    "mies-library-22724.png",
+    "BAUHAUS-2021_1976.jpg"
   ]
   
   function get_random_image(){

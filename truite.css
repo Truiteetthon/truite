@@ -2,7 +2,7 @@
 body{
  /*background-image:linear-gradient(112deg, rgb(197, 146, 255) 0%,rgb(124, 0, 52)13%, rgb(0, 175, 152)20%, 
  rgb(224, 0, 194) 80%, rgb(0, 0, 255) 80%, rgb(124,0,52)100%);*/
-   font-family: roboto;
+   font-family: cormorant;
    font-variant:normal; 
    /*height: 100%;*/
   background-color: rgb(255, 248, 226);
@@ -75,7 +75,7 @@ margin-right: 25%;
   transform: translate(-50%);
 }
 
-img{
+/*img{
   min-width: 300px;
     width:33%;
     position: absolute;
@@ -83,7 +83,7 @@ img{
     transition: 0.2s
 
   
-}
+}*/
  li{
   list-style-type:square;
   color: rgba(255, 255, 255, 0);
@@ -91,7 +91,7 @@ img{
 
 @media (hover: hover) {
   img:hover{
-    opacity: 0.25;
+    opacity: 1;
   }
   body {
     overflow: ;
@@ -187,6 +187,10 @@ projet{
   font-family: Roboto;
   src: url(Font/RobotoCondensed-Light.ttf);
 }
+@font-face {
+  font-family: cormorant;
+  src: url(Font/CormorantGaramond-Light.ttf);
+}
 
 @media screen and (max-width: 800px) {
   .outer1{
@@ -228,7 +232,12 @@ transform: translateX(0%);
 span.ham:hover + div.t0{
   display: block;
 }  
-
+.button2 {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #00000000;
+ margin-left: 50%;
+ transform: translateX(50%);
+}
 button {
   height: 40px;
   width: 40px;
