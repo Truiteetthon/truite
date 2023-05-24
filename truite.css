@@ -45,7 +45,7 @@ div.group {
 
 .link{
   
-  color: rgb(0, 0, 0);
+  color: rgb(53, 96, 142);
   transition: 1s;
   text-decoration: none;
 
@@ -75,23 +75,22 @@ margin-right: 25%;
   transform: translate(-50%);
 }
 
-img.portfolio{
+.portfolio{
   min-width: 300px;
-    width:33%;
-    position: absolute;
-    scroll-snap-align: start;
-    transition: 0.2s
-
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width:70%; 
+  }
   
-}
  li{
   list-style-type:square;
   color: rgba(255, 255, 255, 0);
  }
 
 @media (hover: hover) {
-  img:hover{
-    opacity: 1;
+  .portfolio:hover{
+    opacity: 0.25;
   }
   body {
     overflow: ;
@@ -110,11 +109,6 @@ img.portfolio{
   }
 }
 
-.projects{
-  min-width: 300px;
-  width: 100%;
-  transform: translateY(-50%);
-}
 .lien{
   color: rgba(255, 255, 255, 0);
   min-width: 300px;
@@ -122,14 +116,6 @@ img.portfolio{
   height: fit-content;
   position: absolute;
   align-items: center;
-}
-
-
-projet{
-  position: absolute;
-  height: fit-content;
-  width: fit-content;
-  
 }
 
 
