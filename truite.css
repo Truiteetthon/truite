@@ -75,7 +75,7 @@ margin-right: 25%;
   transform: translate(-50%);
 }
 
-img{
+img.portfolio{
   min-width: 300px;
     width:33%;
     position: absolute;
