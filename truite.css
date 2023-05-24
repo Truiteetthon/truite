@@ -75,7 +75,7 @@ margin-right: 25%;
   transform: translate(-50%);
 }
 
-/*img{
+img{
   min-width: 300px;
     width:33%;
     position: absolute;
@@ -83,7 +83,7 @@ margin-right: 25%;
     transition: 0.2s
 
   
-}*/
+}
  li{
   list-style-type:square;
   color: rgba(255, 255, 255, 0);
