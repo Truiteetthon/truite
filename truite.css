@@ -223,7 +223,7 @@ span.ham:hover + div.t0{
 button {
   height: 50px;
   width: 50px;
-  background: radial-gradient(circle, rgba(0,0,50,1) 38%, rgba(0,0,0,0) 100%);
+  background: background: radial-gradient(circle, rgba(0,0,50,0.773546918767507) 18%, rgba(0,0,0,0.15730042016806722) 100%);
   border: none;
   border-radius: 50%;
 }
