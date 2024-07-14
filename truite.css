@@ -276,3 +276,7 @@ circle {
   font-family: baskervvol;
   src: url(Font/BBBBaskervvol-Base.otff);
 }
+@font-face {
+  font-family: adelphe ;
+  src: url(Font/Adelphe-FructidorRegular.otf);
+}
