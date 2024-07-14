@@ -1,7 +1,9 @@
 
 body{
-   font-family:switzer;
+   font-family:amiamie;
    font-variant:normal; 
+   font-size:12px;
+   
    /*height: 100%;
   background-color: rgb(255, 248, 226);*/
 }
@@ -25,10 +27,21 @@ html, body {
 
 .t0{
   position: fixed;
-  top: 50%;
+  top: 20px;
+  left : 20px;
+  width : 30%;
+ /* top: 50%;
   left: 50%;
   width: 33%;
-  transform: translate(-110%,-50%);
+  transform: translate(-110%,-50%); */
+}
+.t1{
+  position: fixed;
+  top: 20px;
+  left : 20px;
+  width : 33%;
+  top: 100%;
+  transform: translate(0%,-150%); */
 }
 
 info{
@@ -43,9 +56,9 @@ div.group {
 
 .link{
   
-  color: rgb(53, 96, 142);
+  /*color: rgb(53, 96, 142);
   transition: 1s;
-  text-decoration: none;
+  text-decoration: none;*/
 
 }
  
@@ -61,6 +74,12 @@ div.centré {
 
   transform: translate(-50%, -50%);
 }
+
+.centre {
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
 div.blanc {
   font-style: white;
 }
@@ -78,7 +97,7 @@ margin-right: 25%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width:70%; 
+    width:100%; 
   }
   
  li{
@@ -106,7 +125,7 @@ margin-right: 25%;
 .lien{
   color: rgba(255, 255, 255, 0);
   min-width: 300px;
-  width:33%;
+  width:50%;
   height: fit-content;
   position: absolute;
   align-items: center;
@@ -124,9 +143,10 @@ margin-right: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
+  width: 60%;
   height: 100%;
-  margin-left: 50%;
+  margin-left: 66%;
+  transform: translate(-50%,0px);
 }
 .outer1 {
   display: flex;
@@ -143,6 +163,12 @@ margin-right: 25%;
   left: 5px;
   transform: translateX(-200%);
 }
+
+a{
+color: grey;
+text-decoration: none;
+
+￼}
 
 @font-face {
   font-family: Pixeloid Sans;
@@ -235,5 +261,18 @@ circle {
 
 @font-face {
   font-family: switzer;
-  src: url(font/Switzer-Regular.otf);
+  src: url(Font/Switzer-Regular.otf);
+}
+
+@font-face {
+  font-family: rowan;
+  src: url(Font/Rowan-Regular.otf);
+}
+@font-face {
+  font-family: amiamie;
+  src: url(Font/Amiamie-Light.otf);
+}
+@font-face {
+  font-family: baskervvol;
+  src: url(Font/BBBBaskervvol-Base.otff);
 }
