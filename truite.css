@@ -198,6 +198,7 @@ text-decoration: none;
   src: url(Font/CormorantGaramond-Light.ttf);
 }
 
+
 @media screen and (max-width: 800px) {
   .outer1{
     margin-top: 100%;
@@ -216,6 +217,7 @@ text-decoration: none;
     width: 100%;
     height: 100%;
     margin-left: 0px;
+    transform: translate(0%,0px);
   
   }
   .t0{
