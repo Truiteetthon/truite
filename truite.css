@@ -159,8 +159,8 @@ margin-right: 25%;
 
 .ham{
   position: fixed;
-  top: 5px;
-  left: 5px;
+  top: 10px;
+  left: 10px;
   transform: translateX(-200%);
 }
 
@@ -247,9 +247,9 @@ span.ham:hover + div.t0{
  transform: translateX(50%);
 }
 button {
-  height: 50px;
-  width: 50px;
-  background: background: radial-gradient(circle, rgba(0,0,50,0.773546918767507) 18%, rgba(0,0,0,0.15730042016806722) 100%);
+  height: 20px;
+  width: 30px;
+  background: radial-gradient(circle, rgba(0,0,50,0.773546918767507) 18%, rgba(0,0,0,0) 100%);
   border: none;
   border-radius: 50%;
 }
@@ -257,7 +257,6 @@ circle {
   height: 80%;
   width: 80%;
   background-color: rgba(255, 255, 255, 0);
-  border: 1px solid #000;
   border-radius: 50%;
 }
 

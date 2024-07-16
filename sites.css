@@ -4,7 +4,7 @@ div.endpage {
   transform: translate(0%, -102%)
 }
 
-div.centré {
+div.centré { '
     position:absolute;
     top: 50%;
     left: 50%;
@@ -17,9 +17,13 @@ div.centré {
     color:  rgb(255, 255, 255);
     transition: 0.2s;
     transition: 0.25s ease-out;
+    text-decoration: none;
   }
   a:hover{
     text-decoration: none;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(50, 50, 50);
   }
-  
+  @font-face {
+  font-family: adelphe ;
+  src: url(Font/Adelphe-FructidorRegular.otf);
+}
