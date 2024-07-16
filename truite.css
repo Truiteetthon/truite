@@ -27,7 +27,7 @@ html, body {
 
 .t0{
   position: fixed;
-  top: 20px;
+  top: 5px;
   left : 20px;
   width : 30%;
  /* top: 50%;
@@ -36,12 +36,11 @@ html, body {
   transform: translate(-110%,-50%); */
 }
 .t1{
+top: 100%;
   position: fixed;
-  top: 20px;
   left : 20px;
   width : 33%;
-  top: 100%;
-  transform: translate(0%,-150%); */
+  transform: translate(0%,-200%); */
 }
 
 info{
