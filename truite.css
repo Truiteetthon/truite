@@ -106,7 +106,7 @@ margin-right: 25%;
 
 @media (hover: hover) {
   .portfolio:hover{
-    opacity: 0.25;
+    opacity: 0.75;
   }
 
 }
