@@ -118,12 +118,13 @@ margin-right: 25%;
  .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-auto-rows: 90%;
+  grid-auto-rows: 60vh;
 }
 .container div {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: 
 }
 
 img {
