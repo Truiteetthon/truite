@@ -38,7 +38,7 @@ image_array = [
     "35.jpeg",
     "36.jpeg",
     "37.jpeg",
-    "1.png"
+  
   ]
   
   function get_random_image(){
