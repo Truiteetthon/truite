@@ -1,41 +1,35 @@
 
-const BertImages = [
-  'photo/Bert/Bert.jpg',
-'photo/Bert/Bert-01.jpg',
-'photo/Bert/Bert-02.jpg',
-'photo/Bert/Bert-03.jpg',
-'photo/Bert/Bert-04.jpg',
-'photo/Bert/Bert-05.jpg',
-'photo/Bert/Bert-06.jpg',
-'photo/Bert/Bert-07.jpg',
-'photo/Bert/Bert-08.jpg',
-'photo/Bert/Bert-09.jpg',
-'photo/Bert/Bert-10.jpg',
-'photo/Bert/Bert-11.jpg',
-'photo/Bert/Bert-12.jpg',
+const I2Images = [
+'photo/I2/I2-1.jpg',
+'photo/I2/I2-2.jpg',
+'photo/I2/I2-3.jpg',
+'photo/I2/I2-4.jpg',
+'photo/I2/I2-5.jpg',
+'photo/I2/I2-6.jpg',
+'photo/I2/I2-7.jpg',
 ];
 
 
-// Bert ---------------------------
-let BertcurrentIndex = 0;
+// I2 ---------------------------
+let I2currentIndex = 0;
 
 // Get the image element
-const Bert = document.getElementById('Bert');
+const I2 = document.getElementById('I2');
 
 // Function to change the image
-const BertchangeImage = () => {
+const I2changeImage = () => {
   // Increment the index to point to the next image
-  BertcurrentIndex++;
+  I2currentIndex++;
 
   // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
-  if (BertcurrentIndex >= BertImages.length) {
-      BertcurrentIndex = 0;
+  if (I2currentIndex >= I2Images.length) {
+      I2currentIndex = 0;
   }
 
   // Update the image source to the new image
-  Bert.src = BertImages[BertcurrentIndex];
+  I2.src = I2Images[I2currentIndex];
 };
 
 // Add event listeners for both click and touchstart
-Bert.addEventListener('click', BertchangeImage);
-Bert.addEventListener('touchstart', BertchangeImage);
+I2.addEventListener('click', I2changeImage);
+I2.addEventListener('touchstart', I2changeImage);

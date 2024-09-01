@@ -1,5 +1,5 @@
 
-// Array of image file names
+// Array of P --------------------------------------
 
 
 const p1Images = [
@@ -7,6 +7,32 @@ const p1Images = [
 'photo/P1/2.png',
 'photo/P1/3.png',
 ];
+
+const P6Images = [
+  'photo/P6/P6.jpg',
+'photo/P6/P6-01.jpg',
+'photo/P6/P6-02.jpg',
+'photo/P6/P6-03.jpg',
+'photo/P6/P6-04.jpg',
+'photo/P6/P6-05.jpg',
+'photo/P6/P6-06.jpg',
+'photo/P6/P6-07.jpg',
+];
+
+const P9Images = [
+  'photo/P9/P9.jpg',
+'photo/P9/P9-01.jpg',
+'photo/P9/P9-02.jpg',
+'photo/P9/P9-03.jpg',
+'photo/P9/P9-04.jpg',
+];
+
+const P10Images = [
+  'photo/P10/P10.jpg',
+'photo/P10/P10-01.jpg',
+'photo/P10/P10-02.jpg',
+];
+
 
 const p11Images = [
   'photo/P11/P11.jpg',
@@ -47,8 +73,27 @@ const BertImages = [
 'photo/Bert/Bert-12.jpg',
 ];
 
+// Array of I ------------------------------------------
 
+const I1Images = [
+  'photo/I1/I1.jpg',
+'photo/I1/I1-01.jpg',
+'photo/I1/I1-02.jpg',
+'photo/I1/I1-03.jpg',
+'photo/I1/I1-04.jpg',
+'photo/I1/I1-05.jpg',
+];
 
+const I2Images = [
+  'photo/I2/I2-1.jpg',
+  'photo/I2/I2-2.jpg',
+  'photo/I2/I2-3.jpg',
+  'photo/I2/I2-4.jpg',
+  'photo/I2/I2-5.jpg',
+  'photo/I2/I2-6.jpg',
+  ];
+
+// Code of P --------------------------------------
   
 // P1 -----------------
 
@@ -77,10 +122,82 @@ p1.addEventListener('touchstart', p1changeImage);
 
 
 
+// P6 ---------------------------
+let P6currentIndex = 0;
+
+// Get the image element
+const P6 = document.getElementById('P6');
+
+// Function to change the image
+const P6changeImage = () => {
+  // Increment the index to point to the next image
+  P6currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (P6currentIndex >= P6Images.length) {
+      P6currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  P6.src = P6Images[P6currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+P6.addEventListener('click', P6changeImage);
+P6.addEventListener('touchstart', P6changeImage);
 
 
 
 
+// P9 ---------------------------
+let P9currentIndex = 0;
+
+// Get the image element
+const P9 = document.getElementById('P9');
+
+// Function to change the image
+const P9changeImage = () => {
+  // Increment the index to point to the next image
+  P9currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (P9currentIndex >= P9Images.length) {
+      P9currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  P9.src = P9Images[P9currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+P9.addEventListener('click', P9changeImage);
+P9.addEventListener('touchstart', P9changeImage);
+
+
+
+// P10 ---------------------------
+let P10currentIndex = 0;
+
+// Get the image element
+const P10 = document.getElementById('P10');
+
+// Function to change the image
+const P10changeImage = () => {
+  // Increment the index to point to the next image
+  P10currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (P10currentIndex >= P10Images.length) {
+      P10currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  P10.src = P10Images[P10currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+P10.addEventListener('click', P10changeImage);
+P10.addEventListener('touchstart', P10changeImage);
 
 
 
@@ -107,6 +224,9 @@ const p11changeImage = () => {
 // Add event listeners for both click and touchstart
 p11.addEventListener('click', p11changeImage);
 p11.addEventListener('touchstart', p11changeImage);
+
+
+
 
 // P12 ---------------------------
 let p12currentIndex = 0;
@@ -157,3 +277,57 @@ const BertchangeImage = () => {
 // Add event listeners for both click and touchstart
 Bert.addEventListener('click', BertchangeImage);
 Bert.addEventListener('touchstart', BertchangeImage);
+
+
+
+// Code of I --------------------------------------
+  
+
+// I1 ---------------------------
+let I1currentIndex = 0;
+
+// Get the image element
+const I1 = document.getElementById('I1');
+
+// Function to change the image
+const I1changeImage = () => {
+  // Increment the index to point to the next image
+  I1currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (I1currentIndex >= I1Images.length) {
+      I1currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  I1.src = I1Images[I1currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+I1.addEventListener('click', I1changeImage);
+I1.addEventListener('touchstart', I1changeImage);
+
+
+// I2 ---------------------------
+let I2currentIndex = 0;
+
+// Get the image element
+const I2 = document.getElementById('I2');
+
+// Function to change the image
+const I2changeImage = () => {
+  // Increment the index to point to the next image
+  I2currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (I2currentIndex >= I2Images.length) {
+      I2currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  I2.src = I2Images[I2currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+I2.addEventListener('click', I2changeImage);
+I2.addEventListener('touchstart', I2changeImage);
