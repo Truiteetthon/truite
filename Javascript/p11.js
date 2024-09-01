@@ -118,7 +118,7 @@ const p1changeImage = () => {
 
 // Add event listeners for both click and touchstart
 p1.addEventListener('click', p1changeImage);
-p1.addEventListener('touchstart', p1changeImage);
+
 
 
 
@@ -144,7 +144,7 @@ const P6changeImage = () => {
 
 // Add event listeners for both click and touchstart
 P6.addEventListener('click', P6changeImage);
-P6.addEventListener('touchstart', P6changeImage);
+
 
 
 
@@ -171,7 +171,7 @@ const P9changeImage = () => {
 
 // Add event listeners for both click and touchstart
 P9.addEventListener('click', P9changeImage);
-P9.addEventListener('touchstart', P9changeImage);
+
 
 
 
@@ -197,7 +197,7 @@ const P10changeImage = () => {
 
 // Add event listeners for both click and touchstart
 P10.addEventListener('click', P10changeImage);
-P10.addEventListener('touchstart', P10changeImage);
+
 
 
 
@@ -223,7 +223,10 @@ const p11changeImage = () => {
 
 // Add event listeners for both click and touchstart
 p11.addEventListener('click', p11changeImage);
-p11.addEventListener('touchstart', p11changeImage);
+
+
+
+
 
 
 
@@ -250,7 +253,10 @@ const p12changeImage = () => {
 
 // Add event listeners for both click and touchstart
 p12.addEventListener('click', p12changeImage);
-p12.addEventListener('touchstart', p12changeImage);
+
+
+
+
 
 
 
@@ -276,7 +282,8 @@ const BertchangeImage = () => {
 
 // Add event listeners for both click and touchstart
 Bert.addEventListener('click', BertchangeImage);
-Bert.addEventListener('touchstart', BertchangeImage);
+
+
 
 
 
@@ -305,7 +312,7 @@ const I1changeImage = () => {
 
 // Add event listeners for both click and touchstart
 I1.addEventListener('click', I1changeImage);
-I1.addEventListener('touchstart', I1changeImage);
+
 
 
 // I2 ---------------------------
@@ -330,4 +337,4 @@ const I2changeImage = () => {
 
 // Add event listeners for both click and touchstart
 I2.addEventListener('click', I2changeImage);
-I2.addEventListener('touchstart', I2changeImage);
+
