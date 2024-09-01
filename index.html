@@ -7,8 +7,8 @@
     <title>RÉMI BONIN</title>
     <LINK href="truite.css" rel="stylesheet" type="text/css">
     <link rel="shortcut icon" type="image/jpg" href="photo/Favicon.jpg">
-    <script src="photo.js"></script>
-    <script src="filtre.js"></script>
+    
+    
  
     
       
@@ -16,7 +16,7 @@
   
   
   
-<body class="body" style="margin: 0px; background-color: rgb(255, 255, 255);" onload="get_random_image()">
+<body class="body" style="margin: 0px; background-color: rgb(255, 255, 255);">
    
   <div class="container">  
     <div id="1" style="grid-column: 1 / 3">
@@ -29,18 +29,18 @@
     <br>Courriel. rbonin.rbonin@gmail.com</p>
     </div>
     <div id="1">
-      <img  src="photo\IMG_1505.jpg" alt="arbre"></a>
+      <img  src="photo\IMG_1505.jpg" alt="arbre"/></a>
 
-     <p> mon bureau
+     <p> Mon bureau
       <br>
       2024
      </p>
       
     </div>
   
-  <div id="1">
-       <img  src="photo\21-01\2.png" alt="arbre"></a>
-       <p> bauhaus 2021
+  <div >
+       <img id="p1" src="photo/P1/2.png" alt="arbre">
+       <p> Bauhaus 2021
         <br>
         2021
        
@@ -48,29 +48,30 @@
      
      <div id="2" > 
    <img src="photo\chalet_val-david\000051630032.jpg" alt="conception"  > </a>
-   <p> chalet Val-David
+   <p> Chalet Val-David
     <br>
     2024
        
  </div>
  
- <div  id="3" > 
-   <img src="photo\Accueil\B1.jpeg" alt="conception"  > </a>
-   <p> documentation rivière st-charle
+ <div   > 
+   <img id="p12" src="photo\P12\P12.jpg" alt="conception" >
+   <p> Documentation rivière st-charle
     <br>
     2024
    </p>
        
  </div>
  
- <div  id="4" >
-   <img src="photo\Bert\36.jpeg" alt="conception"  > </a>
+ <div   >
+  <div style="height: 100%;">
+   <img id="Bert" src="photo/Bert/Bert-01.jpg" alt="conception"  > </div>
    <p> pavillon métis
     <br>
     Jérome Lapierre Architecte
    </p>
  </div>
- <div  id="photo">
+ <div  id="sites">
      
   <a href="sites.html"> <img src="photo\Bert\image.png" alt="conception"  > </a>
   <p> Mes coups de coeurs
@@ -89,9 +90,9 @@
            
      </div>
      
-     <div  id="photo">
+     <div >
      
-      <img src="photo\chalet_val-david\000051630028.jpg" alt="conception"  > </a>
+      <img  id="p11"  alt="conception" src="photo\P11\P11.jpg"/> 
       <p> Exploration Jean-Marie Roy
        <br>
        2024
@@ -137,55 +138,20 @@
     <img src="photo/P8/image.png" alt="panneau mies" ></a>
     
   </div>
-   <div>
-
-Tel. (514) 692-3120
-<br>
-Courriel. rbonin.rbonin@gmail.com
-<br>
-Web. remibonin.com
-        
-        </div>
+</div>
    
-         
- 
-       </div>
-   
-
+<div style="height: 40vh; width: 100vw; text-align: center; font-family: adelphe; padding-top: 30vh;">fin</div>
  
 <div class= "t0">
   Rémi Bonin
 </div>
-  <div class= "t2">
-    <div>
-    <input type="checkbox" id="Architecture" name="scales" checked />
-    <label for="Architecture">Architecture</label> 
-    <input type="checkbox" id="Photographie" name="scales" checked />
-    <label for="Photographie">Photographie</label> 
-    <input type="checkbox" id="Livres" name="scales" checked />
-    <label for="Livres">Livres</label>
-    <input type="checkbox" id="Illustrations" name="scales" checked />
-    <label for="Illustrations">Illustrations</label>
-    <input type="checkbox" id="Films" name="scales" checked />
-    <label for="Films">Films</label>
-    <input type="checkbox" id="Musique" name="scales" checked />
-    <label for="Musique">Jardins</label>
-
-  </div>
-  <br>
-  <div>
-    <input type="radio" id="tout" name="filtre" value="0" checked />
-    <label for="tout">tout</label>
-    <input type="radio" id="mes projets" name="filtre" value="1" checked />
-    <label for="mes projets">mes projets</label>
-    <input type="radio" id="inspiration" name="filtre" value="2" checked />
-    <label for="inspiration">inspiration</label>
-  </div>
-  </div>
+  
    
   </div>
       
 
 </div>
+<script src="Javascript/p11.js"></script>
+
     </body>
 </html>
