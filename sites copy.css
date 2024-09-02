@@ -24,7 +24,7 @@ div.centré { '
     left: 50%;
     width: 33%;
     transform: translate(-110%,-50%); */
-    background-color: black;
+    background-color: rgb(255, 255, 255);
   }
 
   .t2{
@@ -38,14 +38,14 @@ div.centré { '
   }
 
   a{
-    color:  rgb(255, 255, 255);
+    color:  rgb(0, 0, 0);
     transition: 0.2s;
     transition: 0.25s ease-out;
     text-decoration: none;
   }
   a:hover{
     text-decoration: none;
-    color: rgb(180, 180, 180);
+    color: rgb(57, 57, 57);
   }
   @font-face {
   font-family: adelphe ;

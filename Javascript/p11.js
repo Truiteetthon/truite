@@ -93,6 +93,25 @@ const I2Images = [
   'photo/I2/I2-6.jpg',
   ];
 
+
+  
+const I3Images = [
+  'photo/I3/I3-1.jpg',
+  'photo/I3/I3-2.jpg',
+  'photo/I3/I3-3.jpg',
+  'photo/I3/I3-4.jpg',
+  'photo/I3/I3-5.jpg',
+  'photo/I3/I3-6.jpg',
+  ];
+  
+  const I4Images = [
+    'photo/I4/I4-1.jpg',
+    'photo/I4/I4-2.jpg',
+    'photo/I4/I4-3.jpg',
+    'photo/I4/I4-4.jpg',
+    ];
+
+
 // Code of P --------------------------------------
   
 // P1 -----------------
@@ -338,3 +357,50 @@ const I2changeImage = () => {
 // Add event listeners for both click and touchstart
 I2.addEventListener('click', I2changeImage);
 
+
+// I3 ---------------------------
+let I3currentIndex = 0;
+
+// Get the image element
+const I3 = document.getElementById('I3');
+
+// Function to change the image
+const I3changeImage = () => {
+  // Increment the index to point to the next image
+  I3currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (I3currentIndex >= I3Images.length) {
+      I3currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  I3.src = I3Images[I3currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+I3.addEventListener('click', I3changeImage);
+
+
+// I4 ---------------------------
+let I4currentIndex = 0;
+
+// Get the image element
+const I4 = document.getElementById('I4');
+
+// Function to change the image
+const I4changeImage = () => {
+  // Increment the index to point to the next image
+  I4currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (I4currentIndex >= I4Images.length) {
+      I4currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  I4.src = I4Images[I4currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+I4.addEventListener('click', I4changeImage);
