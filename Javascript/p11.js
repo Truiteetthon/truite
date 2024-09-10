@@ -6,6 +6,7 @@ const p1Images = [
 'photo/P1/1.jpeg',
 'photo/P1/2.png',
 'photo/P1/3.png',
+'photo/P1/4.png',
 ];
 
 const P6Images = [
@@ -25,6 +26,8 @@ const P9Images = [
 'photo/P9/P9-02.jpg',
 'photo/P9/P9-03.jpg',
 'photo/P9/P9-04.jpg',
+'photo/P9/P9-05.jpg',
+'photo/P9/P9-06.jpg',
 ];
 
 const P10Images = [
