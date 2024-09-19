@@ -68,7 +68,6 @@ top: 100%;
 font-size:12px;
 align-items: center;
     justify-items: center;
-    color: #3e210f;
   
 }
 
@@ -81,7 +80,7 @@ img {
 }
 
 .insp {
-  color: #9b2915;
+  color: #7c96c4;
   font-family: adelphe;
 }
 .contained{
