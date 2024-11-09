@@ -100,10 +100,7 @@ const P14Images = [
     'photo/P15/P15-2.jpg',
     'photo/P15/P15-3.jpg',
     'photo/P15/P15-4.jpg',
-    'photo/P15/P15-5.jpg',
-    'photo/P15/P15-6.jpg',
-    'photo/P15/P15-7.jpg',
-    'photo/P15/P15-8.jpg',
+
     ];
     
 // Array of I ------------------------------------------
