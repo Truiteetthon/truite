@@ -79,6 +79,15 @@ img {
   touch-action: manipulation;
 }
 
+video {
+
+  max-width:70%;
+  max-height:70%;
+  align-items: center;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
 .insp {
   color: #7c96c4;
   font-family: adelphe;
