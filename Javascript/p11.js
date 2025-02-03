@@ -131,7 +131,7 @@ const I3Images = [
 
 const I6Images = [
 'photo/I6/I6-2.jpg',
-'photo/I6/I6-1.jpg',
+'photo/I6/I6-1.JPG',
 'photo/I6/I6-3.jpg',
 'photo/I6/I6-4.jpg',
 'photo/I6/I6-5.jpg',
