@@ -1,33 +1,45 @@
 
-const I6Images = [
-'photo/I6/I6-1.jpg',
-'photo/I6/I6-2.jpg',
-'photo/I6/I6-3.jpg',
-'photo/I6/I6-4.jpg',
-'photo/I6/I6-5.jpg',
-'photo/I6/I6-6.jpg',
+const P18Images = [
+'photo/P18/P18-01.jpg',
+'photo/P18/P18-02.jpg',
+'photo/P18/P18-03.jpg',
+'photo/P18/P18-04.jpg',
+'photo/P18/P18-05.jpg',
+'photo/P18/P18-06.jpg',
+'photo/P18/P18-07.jpg',
+'photo/P18/P18-08.jpg',
+'photo/P18/P18-09.jpg',
+'photo/P18/P18-10.jpg',
+'photo/P18/P18-11.jpg',
+'photo/P18/P18-12.jpg',
+'photo/P18/P18-13.jpg',
+'photo/P18/P18-14.jpg',
+'photo/P18/P18-15.jpg',
+'photo/P18/P18-16.jpg',
+
+
 ];
 
 
-// I6 ---------------------------
-let I6currentIndex = 0;
+// P18 ---------------------------
+let P18currentIndex = 0;
 
 // Get the image element
-const I6 = document.getElementById('I6');
+const P18 = document.getElementById('P18');
 
 // Function to change the image
-const I6changeImage = () => {
+const P18changeImage = () => {
   // Increment the index to point to the next image
-  I6currentIndex++;
+  P18currentIndex++;
 
   // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
-  if (I6currentIndex >= I6Images.length) {
-      I6currentIndex = 0;
+  if (P18currentIndex >= P18Images.length) {
+      P18currentIndex = 0;
   }
 
   // Update the image source to the new image
-  I6.src = I6Images[I6currentIndex];
+  P18.src = P18Images[P18currentIndex];
 };
 
 // Add event listeners for both click and touchstart
-I6.addEventListener('click', I6changeImage);
+P18.addEventListener('click', P18changeImage);

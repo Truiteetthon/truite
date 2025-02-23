@@ -20,6 +20,16 @@ const P6Images = [
 'photo/P6/P6-07.jpg',
 ];
 
+const P7Images = [
+  'photo/P7/P7-01.jpg',
+  'photo/P7/P7-02.jpg',
+  'photo/P7/P7-03.jpg',
+  'photo/P7/P7-04.jpg',
+  'photo/P7/P7-05.jpg',
+  ];
+  
+  
+
 const P9Images = [
   'photo/P9/P9.jpg',
 'photo/P9/P9-01.jpg',
@@ -62,13 +72,7 @@ const p12Images = [
 ];
 
 const P13Images = [
-  'photo/P13/P13-1.jpg',
-  'photo/P13/P13-2.jpg',
-  'photo/P13/P13-3.jpg',
-  'photo/P13/P13-4.jpg',
-  'photo/P13/P13-5.jpg',
-  'photo/P13/P13-6.jpg',
-  'photo/P13/P13-7.jpg',
+  
   ];
 
 const BertImages = [
@@ -87,12 +91,12 @@ const BertImages = [
 ];
 
 const P14Images = [
-  'photo/P14/P14-1.jpg',
-  'photo/P14/P14-2.jpg',
-  'photo/P14/P14-3.jpg',
-  'photo/P14/P14-4.jpg',
-  'photo/P14/P14-5.jpg',
-  'photo/P14/P14-6.jpg',
+  'photo/P14/P14-01.jpg',
+  'photo/P14/P14-02.jpg',
+  'photo/P14/P14-03.jpg',
+  'photo/P14/P14-04.jpg',
+  'photo/P14/P14-05.jpg',
+  'photo/P14/P14-06.jpg',
   ];
   
   const P15Images = [
@@ -100,9 +104,71 @@ const P14Images = [
     'photo/P15/P15-2.jpg',
     'photo/P15/P15-3.jpg',
     'photo/P15/P15-4.jpg',
+    'photo/P13/P13-1.jpg',
+  'photo/P13/P13-2.jpg',
+  'photo/P13/P13-3.jpg',
+  'photo/P13/P13-4.jpg',
+  'photo/P13/P13-5.jpg',
+  'photo/P13/P13-6.jpg',
+  'photo/P13/P13-7.jpg',
 
     ];
     
+    const P16Images = [
+      'photo/P16/P16-01.jpg',
+      'photo/P16/P16-02.jpg',
+      'photo/P16/P16-03.jpg',
+      'photo/P16/P16-04.jpg',
+      'photo/P16/P16-05.jpg',
+      'photo/P16/P16-06.jpg',
+      'photo/P16/P16-07.jpg',
+      'photo/P16/P16-08.jpg',
+      'photo/P16/P16-09.jpg',
+      'photo/P16/P16-10.jpg',
+      'photo/P16/P16-11.jpg',
+      'photo/P16/P16-12.jpg',
+      'photo/P16/P16-13.jpg',
+      'photo/P16/P16-14.jpg',
+      'photo/P16/P16-15.jpg',
+      'photo/P16/P16-16.jpg',
+      
+      ];
+
+      const P17Images = [
+        'photo/P17/P17-01.jpg',
+        'photo/P17/P17-02.jpg',
+        'photo/P17/P17-03.jpg',
+        'photo/P17/P17-04.jpg',
+        'photo/P17/P17-05.jpg',
+        'photo/P17/P17-06.jpg',
+        'photo/P17/P17-07.jpg',
+        'photo/P17/P17-08.jpg',
+        'photo/P17/P17-09.jpg',
+        
+        
+        ];
+
+        
+const P18Images = [
+  'photo/P18/P18-01.jpg',
+  'photo/P18/P18-02.jpg',
+  'photo/P18/P18-03.jpg',  
+  ];
+
+        const P19Images = [
+          'photo/P19/P19-01.jpg',
+          'photo/P19/P19-02.jpg',
+          'photo/P19/P19-03.jpg',
+          'photo/P19/P19-04.jpg',
+          'photo/P19/P19-05.jpg',
+          'photo/P19/P19-06.jpg',
+          'photo/P19/P19-07.jpg',
+          'photo/P19/P19-08.jpg',
+          'photo/P19/P19-09.jpg',
+          'photo/P19/P19-10.jpg',
+          'photo/P19/P19-11.jpg',
+          
+          ];
 // Array of I ------------------------------------------
 
 const I1Images = [
@@ -130,12 +196,10 @@ const I3Images = [
     ];
 
 const I6Images = [
-'photo/I6/I6-2.jpg',
-'photo/I6/I6-1.JPG',
-'photo/I6/I6-3.jpg',
-'photo/I6/I6-4.jpg',
-'photo/I6/I6-5.jpg',
-'photo/I6/I6-6.jpg',
+'photo/I6/I6_01.jpg',
+'photo/I6/I6_02.jpg',
+'photo/I6/I6_03.jpg',
+'photo/I6/I6_04.jpg',
 ];
 // Code of P --------------------------------------
   
@@ -191,7 +255,28 @@ P6.addEventListener('click', P6changeImage);
 
 
 
+// P7 ---------------------------
+let P7currentIndex = 0;
 
+// Get the image element
+const P7 = document.getElementById('P7');
+
+// Function to change the image
+const P7changeImage = () => {
+  // Increment the index to point to the next image
+  P7currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (P7currentIndex >= P7Images.length) {
+      P7currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  P7.src = P7Images[P7currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+P7.addEventListener('click', P7changeImage);
 
 // P9 ---------------------------
 let P9currentIndex = 0;
@@ -301,30 +386,6 @@ p12.addEventListener('click', p12changeImage);
 
 
 
-// P13 ---------------------------
-let P13currentIndex = 0;
-
-// Get the image element
-const P13 = document.getElementById('P13');
-
-// Function to change the image
-const P13changeImage = () => {
-  // Increment the index to point to the next image
-  P13currentIndex++;
-
-  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
-  if (P13currentIndex >= P13Images.length) {
-      P13currentIndex = 0;
-  }
-
-  // Update the image source to the new image
-  P13.src = P13Images[P13currentIndex];
-};
-
-// Add event listeners for both click and touchstart
-P13.addEventListener('click', P13changeImage);
-
-
 // P14 ---------------------------
 let P14currentIndex = 0;
 
@@ -373,6 +434,104 @@ const P15changeImage = () => {
 // Add event listeners for both click and touchstart
 P15.addEventListener('click', P15changeImage);
 
+// P16 ---------------------------
+let P16currentIndex = 0;
+
+// Get the image element
+const P16 = document.getElementById('P16');
+
+// Function to change the image
+const P16changeImage = () => {
+  // Increment the index to point to the next image
+  P16currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (P16currentIndex >= P16Images.length) {
+      P16currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  P16.src = P16Images[P16currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+P16.addEventListener('click', P16changeImage);
+
+
+
+
+
+// P17 ---------------------------
+let P17currentIndex = 0;
+
+// Get the image element
+const P17 = document.getElementById('P17');
+
+// Function to change the image
+const P17changeImage = () => {
+  // Increment the index to point to the next image
+  P17currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (P17currentIndex >= P17Images.length) {
+      P17currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  P17.src = P17Images[P17currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+P17.addEventListener('click', P17changeImage);
+
+
+// P18 ---------------------------
+let P18currentIndex = 0;
+
+// Get the image element
+const P18 = document.getElementById('P18');
+
+// Function to change the image
+const P18changeImage = () => {
+  // Increment the index to point to the next image
+  P18currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (P18currentIndex >= P18Images.length) {
+      P18currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  P18.src = P18Images[P18currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+P18.addEventListener('click', P18changeImage);
+
+
+// P19 ---------------------------
+let P19currentIndex = 0;
+
+// Get the image element
+const P19 = document.getElementById('P19');
+
+// Function to change the image
+const P19changeImage = () => {
+  // Increment the index to point to the next image
+  P19currentIndex++;
+
+  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
+  if (P19currentIndex >= P19Images.length) {
+      P19currentIndex = 0;
+  }
+
+  // Update the image source to the new image
+  P19.src = P19Images[P19currentIndex];
+};
+
+// Add event listeners for both click and touchstart
+P19.addEventListener('click', P19changeImage);
+
 
 // Bert ---------------------------
 let BertcurrentIndex = 0;
@@ -396,6 +555,9 @@ const BertchangeImage = () => {
 
 // Add event listeners for both click and touchstart
 Bert.addEventListener('click', BertchangeImage);
+
+
+
 
 
 
