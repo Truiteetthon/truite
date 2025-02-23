@@ -1,3 +1,7 @@
+body {
+  color: rgb(180, 180, 180);
+}
+
 div.endpage {
   position:fixed;
   top: 100%;
