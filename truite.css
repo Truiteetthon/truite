@@ -1,6 +1,6 @@
 
 body{
-   font-family: amiamie;
+   font-family: dindong;
    font-variant:normal; 
    font-size:12px;
    background-color: rgb(255, 255, 255);
@@ -82,7 +82,6 @@ img {
   align-items: center;
   cursor: pointer;
   touch-action: manipulation;
-  mix-blend-mode: multiply;
 }
 
 video {
@@ -189,4 +188,8 @@ p{
 @font-face {
   font-family: adelphe ;
   src: url(Font/Adelphe-FructidorRegular.otf);
+}
+@font-face {
+  font-family: dindong ;
+  src: url(Font/DINdong.woff);
 }
