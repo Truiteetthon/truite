@@ -56,3 +56,11 @@ div.centré { '
   font-family: adelphe ;
   src: url(Font/Adelphe-FructidorRegular.otf);
 }
+@font-face {
+  font-family: dindong ;
+  src: url(Font/DINdong.woff);
+}
+
+image {
+  max-width: 100vw;
+}
