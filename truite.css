@@ -4,8 +4,8 @@ body{
    font-variant:normal; 
    font-size:12px;
    background-color: rgb(255, 255, 255);
+   margin: 0%;
 }
-
 
 html, body { 
   height: 100%; }
@@ -73,7 +73,8 @@ top: 100%;
   align-items: center;
   justify-items: center;
   border: #000000;
-  
+  border-width: 1px;
+  border-style: solid;
 }
 
 img {
@@ -139,6 +140,13 @@ p{
   grid-column: 1 / 2;
 }
 }
+@media screen and (max-width: 800px) {
+  .blank{
+    grid-column: 1 / 2;
+  }
+  }
+
+
 
 @font-face {
   font-family: Pixeloid Sans;
