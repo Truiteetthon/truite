@@ -1,0 +1,210 @@
+
+html{
+  font-family: Arial, Helvetica, sans-serif ;
+   font-variant:normal; 
+   font-size:12px;
+   color: rgb(42, 42, 42);
+   background-color: rgb(243, 243, 243);
+}
+
+a{
+  color: rgb(42, 42, 42);
+
+  text-decoration: none;
+}
+
+a:hover{
+   font-weight: 600;
+   cursor: pointer;
+}
+
+li{
+  width: 70%;
+}
+ul{
+  list-style: none;
+}
+
+.hidden{
+  display: none;
+}
+
+.texteprincipal{
+  padding: 10px; 
+  width: 66%; 
+  margin: 0%;
+  text-align: justify;
+}
+
+.navigation{
+text-align: right; 
+right: 10px; 
+bottom: 10px; 
+position: absolute;
+}
+
+.liste{
+  display: flex; 
+  flex-direction: column; 
+  flex-wrap: wrap; 
+  height: 60svh; 
+  flex: 0 0 100px; 
+  padding: 0%; 
+  margin: 0%;
+}
+
+.enconstruction{
+  color: grey;
+}
+.enconstruction:hover{
+  font-weight: 400;
+  cursor: default;
+}
+.page{
+  height: 90svh; 
+  max-width: 90svh; 
+  top: 5svh; 
+  left: 5svh; 
+  aspect-ratio: 8.5/11; 
+  background-color: rgba(255, 255, 255, 0.940); 
+  position: fixed; 
+  backdrop-filter: blur(0.8px);
+}
+
+.page2{
+  height: 90svh; 
+  max-width: 90svh; 
+  top: 5svh; 
+  left: 10svh; 
+  aspect-ratio: 8.5/11; 
+  background-color: rgba(255, 255, 255, 0.940); 
+  position: fixed; 
+  backdrop-filter: blur(0.8px);
+   animation-duration: 0.5s;
+    animation-name: slide-in;
+    animation-timing-function:cubic-bezier(0.15, 0.22, 0.35, 1);
+}
+
+.page3{
+  height: 90svh; 
+  max-width: 90svh; 
+  top: 5svh; 
+  left: 15svh; 
+  aspect-ratio: 8.5/11; 
+  background-color: rgba(255, 255, 255, 0.940); 
+  position: fixed; 
+  backdrop-filter: blur(0.8px);
+  animation-duration: 0.5s;
+    animation-name: slide-in;
+    animation-timing-function:cubic-bezier(0.15, 0.22, 0.35, 1);
+}
+.retourp1{
+  height: 90svh; 
+  max-width: 90svh; 
+  top: 5svh; 
+  left: 5svh; 
+  aspect-ratio: 8.5/11; 
+  background-color: rgba(255, 255, 255, 0); 
+  position: fixed; 
+  
+}
+.retourp2{
+  height: 90svh; 
+  max-width: 90svh; 
+  top: 5svh; 
+  left: 10svh; 
+  aspect-ratio: 8.5/11; 
+  background-color: rgba(255, 255, 255, 0); 
+  position: fixed; 
+
+}
+.retourp3{
+  height: 90svh; 
+  max-width: 90svh; 
+  top: 5svh; 
+  left: 15svh; 
+  aspect-ratio: 8.5/11; 
+  background-color: rgba(255, 255, 255, 0); 
+  position: fixed; 
+}
+
+@media screen and (max-width: 1200px) {
+.first{
+  grid-column: 1 / 2;
+}
+}
+@media screen and (max-width: 800px) {
+  .blank{
+    grid-column: 1 / 2;
+  }
+  }
+
+
+
+@font-face {
+  font-family: Pixeloid Sans;
+  src: url(Font/PixeloidSans-nR3g1.ttf);
+}
+@font-face {
+  font-family: Isometric Bold;
+  src: url(Font/3DIsometricBold-8MYYZ.ttf);
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url(Font/Montserrat-Regular.ttf);
+}
+@font-face {
+  font-family: Noto;
+  src: url(Font/NotoSansMono-VariableFont_wdth\,wght.ttf);
+}
+@font-face {
+  font-family: Roboto;
+  src: url(Font/RobotoCondensed-Light.ttf);
+}
+@font-face {
+  font-family: cormorant;
+  src: url(Font/CormorantGaramond-Light.ttf);
+}
+@font-face {
+  font-family: switzer;
+  src: url(Font/Switzer-Regular.otf);
+}
+@font-face {
+  font-family: rowan;
+  src: url(Font/Rowan-Regular.otf);
+}
+@font-face {
+  font-family: amiamie;
+  src: url(Font/Amiamie-Light.otf);
+}
+@font-face {
+  font-family: baskervvol;
+  src: url(Font/BBBBaskervvol-Base.otff);
+}
+@font-face {
+  font-family: adelphe ;
+  src: url(Font/Adelphe-FructidorRegular.otf);
+}
+@font-face {
+  font-family: dindong ;
+  src: url(Font/DINdong.woff);
+}
+@font-face {
+  font-family: overused ;
+  src: url(Font/OverusedGrotesk-Roman.woff2);
+}
+@font-face {
+  font-family: New ;
+  src: url(Font/NewHeterodoxMono-Book.otf);
+}
+
+@keyframes slide-in {
+   0%   {
+    translate: -50vw 0;
+  }
+
+ 100% {
+    translate: 0 0;
+  }
+}

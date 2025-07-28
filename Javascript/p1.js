@@ -1,45 +1,58 @@
 
-const P18Images = [
-'photo/P18/P18-01.jpg',
-'photo/P18/P18-02.jpg',
-'photo/P18/P18-03.jpg',
-'photo/P18/P18-04.jpg',
-'photo/P18/P18-05.jpg',
-'photo/P18/P18-06.jpg',
-'photo/P18/P18-07.jpg',
-'photo/P18/P18-08.jpg',
-'photo/P18/P18-09.jpg',
-'photo/P18/P18-10.jpg',
-'photo/P18/P18-11.jpg',
-'photo/P18/P18-12.jpg',
-'photo/P18/P18-13.jpg',
-'photo/P18/P18-14.jpg',
-'photo/P18/P18-15.jpg',
-'photo/P18/P18-16.jpg',
+const ressourcesB = document.getElementById('ressourcesB');
+const ressources = document.getElementById('ressources');
+
+const portfolioB = document.getElementById('portfolioB');
+const portfolio = document.getElementById('portfolio');
+
+const architectesB = document.getElementById('architectesB');
+const architectes = document.getElementById('architectes');
+
+const multimediaB = document.getElementById('multimediaB');
+const multimedia = document.getElementById('multimedia');
 
 
-];
+ressourcesB.addEventListener('click',function () {
+  ressources.setAttribute("class", "page2");
+  retourp1.setAttribute("class", "retourp1");
+});
+
+portfolioB.addEventListener('click',function () {
+  portfolio.setAttribute("class", "page2");
+  retourp1.setAttribute("class", "retourp1");
+});
+
+curriculumB.addEventListener('click',function () {
+  curriculum.setAttribute("class", "page2");
+  retourp1.setAttribute("class", "retourp1");
+});
 
 
-// P18 ---------------------------
-let P18currentIndex = 0;
+architectesB.addEventListener('click',function () {
+  architectes.setAttribute("class", "page3");
+  retourp2.setAttribute("class", "retourp2");
+});
 
-// Get the image element
-const P18 = document.getElementById('P18');
+multimediaB.addEventListener('click',function () {
+  multimedia.setAttribute("class", "page3");
+  retourp2.setAttribute("class", "retourp2");
+});
 
-// Function to change the image
-const P18changeImage = () => {
-  // Increment the index to point to the next image
-  P18currentIndex++;
 
-  // If the index goes beyond the array length, reset it to 0 (loop back to the first image)
-  if (P18currentIndex >= P18Images.length) {
-      P18currentIndex = 0;
-  }
 
-  // Update the image source to the new image
-  P18.src = P18Images[P18currentIndex];
-};
+retourp1.addEventListener('click',function () {
+  retourp1.setAttribute("class", "hidden");
+  retourp2.setAttribute("class", "hidden");
+  architectes.setAttribute("class", "hidden");
+  multimedia.setAttribute("class", "hidden");
+  ressources.setAttribute("class", "hidden");
+  portfolio.setAttribute("class", "hidden");
+  curriculum.setAttribute("class", "hidden");
+});
 
-// Add event listeners for both click and touchstart
-P18.addEventListener('click', P18changeImage);
+retourp2.addEventListener('click',function () {
+  retourp2.setAttribute("class", "hidden");
+  architectes.setAttribute("class", "hidden");
+  multimedia.setAttribute("class", "hidden");
+});
+
