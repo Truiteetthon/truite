@@ -4,7 +4,7 @@ html{
    font-variant:normal; 
    font-size:12px;
    color: rgb(42, 42, 42);
-   background-color: rgb(243, 243, 243);
+   background-color: rgb(255, 255, 255);
 }
 
 body{
@@ -28,6 +28,15 @@ li{
 }
 ul{
   list-style: none;
+}
+
+img{
+  object-fit:scale-down;
+  width: calc(100% - 20px); 
+  max-height: 60svh;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .hidden{
@@ -69,10 +78,10 @@ position: absolute;
   height: 90svh; 
   max-width: 90svh; 
   top: 5svh; 
-  left: 5svh; 
+  left: 15svh; 
   aspect-ratio: 8.5/11; 
   background-color: rgba(255, 255, 255, 0.940); 
-  position:absolute; 
+  position:fixed; 
   backdrop-filter: blur(0.8px);
 }
 
@@ -103,6 +112,17 @@ position: absolute;
     animation-name: slide-in;
     animation-timing-function:cubic-bezier(0.15, 0.22, 0.35, 1);
 }
+
+.pageimage{
+ height: 90svh; 
+  max-width: 90svh; 
+  top: 5svh; 
+  right: 15svh;
+  aspect-ratio: 8.5/11; 
+  background-color: rgba(255, 255, 255, 0.940); 
+  position: absolute; 
+  backdrop-filter: blur(0.8px);
+}
 .retourp1{
   height: 90svh; 
   max-width: 90svh; 
@@ -111,6 +131,7 @@ position: absolute;
   aspect-ratio: 8.5/11; 
   background-color: rgba(255, 255, 255, 0); 
   position: absolute; 
+  backdrop-filter: blur(0.5px);
   
 }
 .retourp2{
@@ -121,6 +142,7 @@ position: absolute;
   aspect-ratio: 8.5/11; 
   background-color: rgba(255, 255, 255, 0); 
   position: absolute; 
+  backdrop-filter: blur(0.5px);
 
 }
 .retourp3{
@@ -131,6 +153,7 @@ position: absolute;
   aspect-ratio: 8.5/11; 
   background-color: rgba(255, 255, 255, 0); 
   position: absolute; 
+  backdrop-filter: blur(0.5px);
 }
 
 @media screen and (max-width: 1200px) {
