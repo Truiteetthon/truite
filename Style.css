@@ -5,11 +5,13 @@ html{
    font-size: 12px;
   outline-color: #ffffff;
    color: rgb(0, 0, 0);
-   background-color: #bababa;
+   background-color: #ffffff;
   
   background-size: cover;
-  -webkit-text-stroke: 3px rgb(255, 255, 255);
-  paint-order: stroke fill;
+  text-shadow: 1px 0px 1px white;
+  text-shadow: -1px 0px 1px white;
+  text-shadow: 0px 1px 1px white;
+  text-shadow: 0px -1px 1px white;
 }
 
 body{
@@ -24,7 +26,7 @@ a{
 
 a:hover{
    cursor: pointer;
-   -webkit-text-stroke: 3px rgb(0, 0, 255);
+  text-shadow: 0px -1px 1px rgb(0, 0, 255);
 }
 
 hr {
@@ -133,7 +135,7 @@ position: absolute;
   background-color: rgb(255, 255, 255); 
   position: fixed; 
   backdrop-filter: blur(0.8px);
-  border: 1px solid #a3a3a3;
+  border: 1px solid #ffffff;
 }
 .retourp1{
   height: 90svh; 
