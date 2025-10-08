@@ -8,10 +8,7 @@ html{
    background-color: #ffffff;
   
   background-size: cover;
-  text-shadow: 1px 0px 1px white;
-  text-shadow: -1px 0px 1px white;
-  text-shadow: 0px 1px 1px white;
-  text-shadow: 0px -1px 1px white;
+  text-shadow: 1px 0px 0.5px white,-1px 0px 0.5px white, 0px 1px 0.5px white, 0px -1px 0.5px white;
 }
 
 body{
