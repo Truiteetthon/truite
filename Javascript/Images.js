@@ -100,10 +100,10 @@ const I1 = document.getElementById('I1');
 const changedata = () => { 
   
   if (I1currentIndex == 0)  {
-    TitreProjet = 'Introduction';
+    TitreProjet = '';
     Artiste = 'Rémi Bonin';
     Année = '2025';
-    Medium = '';
+    Medium = "<br> Courriel. rbonin.rbonin@gmail.com<br><br>Liens<br><a href='description.html'>Description</a><br><a href='ressources.html'>Ressources</a><a href='CV.html'><br>Curriculum Vitae</a>";
     Note = '';
   } 
 

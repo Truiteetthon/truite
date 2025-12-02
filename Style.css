@@ -49,7 +49,6 @@ img{
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
-  mix-blend-mode: multiply;
 }
 
 .black {
@@ -124,15 +123,11 @@ position: absolute;
 
 .pageimage{
  height: 90svh; 
-  max-width: 90svw; 
+width: 95svw; 
   top: 5svh; 
   left: 50svw;
   transform: translateX(-50%);
-  aspect-ratio: 11/8.5; 
-  background-color: rgb(255, 255, 255); 
   position: fixed; 
-  backdrop-filter: blur(0.8px);
-  border: 1px solid #ffffff;
 }
 .retourp1{
   height: 90svh; 
