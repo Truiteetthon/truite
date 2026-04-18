@@ -25,6 +25,7 @@ layout: head.vto
                     alt="{{ post.projet }}"
                     class="carousel-img{{ if i === 0 }} active{{ /if }}"
                     style="cursor: pointer;"
+                    loading="{{ if i === 0 }}eager{{ else }}lazy{{ /if }}"
                   />
                 {{ /for }}
 

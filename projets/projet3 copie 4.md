@@ -7,7 +7,7 @@ type:
   - Nourriture
 lieu: Bruxelles
 photos:
-  - images/Ç.png
+  - images/C2.png
   - images/A.png
   - images/C.png
   - images/H.png
