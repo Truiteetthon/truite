@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Rémi Bonin</title>
+    <link href="Style.css" rel="stylesheet">
+  </head>
+  <body>
+
+{{ content }}
+
+<header>
+  <a href="/index.html"><b>RémiBonin.com</b></a>
+
+  <p>Type</p>
+  {{ for type of search.values("type").sort() }}
+    <input type="radio" id="{{ type }}" name="fav_language" value="{{ type }}">
+    <label for="{{ type }}">{{ type }}</label><br>
+  {{ /for }}
+
+  <p>Année</p>
+  {{ for année of search.values("année").sort().reverse() }}
+    <input type="radio" id="{{ année }}" name="year" value="{{ année }}">
+    <label for="{{ année }}">{{ année }}</label><br>
+  {{ /for }}
+
+  <p>Lieu</p>
+  {{ for lieu of search.values("lieu").sort() }}
+    <input type="radio" id="{{ lieu }}" name="lieu" value="{{ lieu }}">
+    <label for="{{ lieu }}">{{ lieu }}</label><br>
+  {{ /for }}
+</header>
+
+<script src="Script.js"></script>
+  </body>
+</html>
+</html>

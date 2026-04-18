@@ -1,0 +1,31 @@
+media:
+  - name: images # Note: 'name' key is required here
+    label: Images
+    input: images
+    output: images
+content:
+  - name: projets
+    label: Projets
+    type: collection
+    path: projets/
+    fields:
+      - name: projet
+        label: Projet
+        type: string
+      - name: description
+        label: Description
+        type: string
+      - name: année
+        label: Année
+        type: string
+      - name: type
+        label: type
+        type: string
+        list: true
+      - name: lieu
+        label: Lieu
+        type: string
+      - name: photos
+        type: image
+        list: true
+      

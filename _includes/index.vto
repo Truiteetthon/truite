@@ -1,0 +1,45 @@
+---
+layout: head.vto
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My first page</title>
+    <LINK href="Style.css" rel="stylesheet">
+  </head>
+  <body>
+
+      <ul>
+          {{ for post of search.pages("tag=projet", "année=desc") }}
+          <li data-type="{{ post.type |> join(',') }}" data-year="{{ post.année }}" data-lieu="{{ post.lieu }}">
+
+
+              {{ set photos = post.photos ?? (post.photo ? [post.photo] : []) }}
+
+              <div class="carousel" data-index="0">
+                {{ for i, src of photos }}
+                  <img
+                    src="{{ src }}"
+                    alt="{{ post.projet }}"
+                    class="carousel-img{{ if i === 0 }} active{{ /if }}"
+                    style="cursor: pointer;"
+                  />
+                {{ /for }}
+
+                <div class="carousel-desc">
+                  <div class="desc-titre">{{ post.projet }}</div>
+                  <div>{{ post.description }}</div>
+                  <div>{{ post.année }} — {{ post.lieu }}</div>
+                  <div>{{ post.auteurs }}</div>
+                </div>
+              </div>
+          </li>
+        {{ /for }}
+      </ul>
+
+
+  </body>
+{{ content }}
+</html>

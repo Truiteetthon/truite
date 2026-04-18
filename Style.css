@@ -1,244 +1,129 @@
-
-html{
-  font-family: Arial, Helvetica, sans-serif ;
-   font-variant:normal; 
-   font-size: 12px;
-  outline-color: #ffffff;
-   color: rgb(0, 0, 0);
-   background-color: #ffffff;
-  
-  background-size: cover;
-  text-shadow: 0.5px 0px 1px white,-0.5px 0px 1px white, 0px 0.5px 1px white, 0px -1px 1px white;
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-variant: normal;
+    font-size: 12px;
+    background-color: white;
+    color: black;
+    background-size: cover;
+}
+a {
+    color: black;
+    text-decoration: none;
+    background-color: white;
+    border: solid 1px black;
+    display: flex;
+    padding: 1px;
+    width: fit-content;
 }
 
-body{
-
-  max-width: 200svw;
+a:hover {
+    background-color: grey;
 }
 
-
-a{
-  text-decoration: none;
+header {
+    position: fixed;
+    top: 5px;
+    left: 5px;
+    z-index: 11;
 }
 
-a:hover{
-   cursor: pointer;
-  text-shadow: 0px -1px 1px rgb(0, 0, 255);
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 12.5vw;
+    display: grid;
+    grid-template-columns: repeat(3, 25vw);
+    gap: 0px;
 }
 
-hr {
-  display: block;
-  height: 1px;
-  border: 0;
-  border-top: 1px solid #ccc;
-  margin: 1em 0;
-  padding: 0;
+li {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: grab;
+    z-index: 1;
 }
 
-li{
-  width: 70%;
-}
-ul{
-  list-style: none;
+input {
+    display: none;
 }
 
-img{
-  object-fit:scale-down;
-  width: calc(100% - 60px); 
-  height:calc(90svh - 60px);
-  padding-top: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
+label {
+    background-color: white;
+    border: solid 1px black;
+    display: flex;
+    padding: 1px;
+    width: fit-content;
+    margin-bottom: -12px;
 }
 
-.black {
-  display: block;
-  height: 20px;
-  border: 20px;
-  border-top: 20px solid #ffffff;
-  margin: 1em 0;
-  padding: 0;
-
-}
-.hidden{
-  display: none;
+label:hover {
+    background-color: grey;
 }
 
-.texteprincipal{
-  padding: 10px; 
-  width: calc(100% - 20px); 
-  margin: 0px;
-  text-align: justify;
-  height:  50svh;
+p {
+    background-color: lightgrey;
+    border: solid 1px black;
+    display: flex;
+    padding: 1px;
+    width: fit-content;
+    margin-bottom: 2px;
 }
 
-.navigation{
-text-align: right; 
-right: 10px; 
-bottom: 10px; 
-position: absolute;
+.carousel-desc {
+    display: none;
 }
 
-.navigation2{
-text-align: right; 
-right: 0px; 
-bottom: 0px;  
-position: absolute;
+.carousel-desc.active {
+    display: block;
+    padding: 12px;
+    cursor: pointer;
+    object-fit: cover;
+    background-color: lightgoldenrodyellow;
+    width: 300px;
+    height: 100%;
 }
 
-
-.liste{
-  display: flex; 
-  flex-direction: column; 
-  flex-wrap: wrap; 
-  height: 60svh; 
-  flex: 0 0 100px; 
-  padding: 0%; 
-  margin: 0%;
+.desc-titre {
+    font-weight: bold;
+    margin-bottom: 8px;
 }
 
-.enconstruction{
-  color: grey;
-}
-.enconstruction:hover{
-  font-weight: 400;
-  cursor: default;
-}
-.page{
-  height: 90svh; 
-  max-width: 90svw; 
-  top: 5svh; 
-  right: 50svw;
-  aspect-ratio: 8.5/11; 
-  background-color: rgba(255, 255, 255, 0); 
-  position:fixed; 
-  backdrop-filter: blur(0.8px);
-  overflow: scroll;
-  scrollbar-color: rgb(0, 0, 0) white;
-  scrollbar-width: none;
-  border: 1px solid pink;
+/* Hide the browser's default radio button */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
 }
 
-
-
-.pageimage{
- height: 90svh; 
-width: 95svw; 
-  top: 5svh; 
-  left: 50svw;
-  transform: translateX(-50%);
-  position: fixed; 
-}
-.retourp1{
-  height: 90svh; 
-  max-width: 90svh; 
-  top: 5svh; 
-  left: 5svh; 
-  aspect-ratio: 8.5/11; 
-  background-color: rgba(255, 255, 255, 0); 
-  position: absolute; 
-  backdrop-filter: blur(0.5px);
-  
-}
-.retourp2{
-  height: 90svh; 
-  max-width: 90svh; 
-  top: 5svh; 
-  left: 10svh; 
-  aspect-ratio: 8.5/11; 
-  background-color: rgba(255, 255, 255, 0); 
-  position: absolute; 
-  backdrop-filter: blur(0.5px);
-
-}
-.retourp3{
-  height: 90svh; 
-  max-width: 90svh; 
-  top: 5svh; 
-  left: 15svh; 
-  aspect-ratio: 8.5/11; 
-  background-color: rgba(255, 255, 255, 0); 
-  position: absolute; 
-  backdrop-filter: blur(0.5px);
+.text {
+    position: static;
 }
 
-@media screen and (max-width: 1200px) {
-.first{
-  grid-column: 1 / 2;
+.carousel {
+    overflow: visible;
+    width: 80%;
 }
+
+.carousel-img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
-@media screen and (max-width: 800px) {
-  .blank{
-    grid-column: 1 / 2;
-  }
-  }
 
-
-
-@font-face {
-  font-family: Pixeloid Sans;
-  src: url(Font/PixeloidSans-nR3g1.ttf);
+.carousel-img.active {
+    display: block;
 }
-@font-face {
-  font-family: Isometric Bold;
-  src: url(Font/3DIsometricBold-8MYYZ.ttf);
+
+.carousel-counter {
+    bottom: 6px;
+    right: 50%;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.7);
 }
 
 @font-face {
-  font-family: Montserrat;
-  src: url(Font/Montserrat-Regular.ttf);
-}
-@font-face {
-  font-family: Noto;
-  src: url(Font/NotoSansMono-VariableFont_wdth\,wght.ttf);
-}
-@font-face {
-  font-family: Roboto;
-  src: url(Font/RobotoCondensed-Light.ttf);
-}
-@font-face {
-  font-family: cormorant;
-  src: url(Font/CormorantGaramond-Light.ttf);
-}
-@font-face {
-  font-family: switzer;
-  src: url(Font/Switzer-Regular.otf);
-}
-@font-face {
-  font-family: rowan;
-  src: url(Font/Rowan-Regular.otf);
-}
-@font-face {
-  font-family: amiamie;
-  src: url(Font/Amiamie-Light.otf);
-}
-@font-face {
-  font-family: baskervvol;
-  src: url(Font/BBBBaskervvol-Base.otff);
-}
-@font-face {
-  font-family: adelphe ;
-  src: url(Font/Adelphe-FructidorRegular.otf);
-}
-@font-face {
-  font-family: dindong ;
-  src: url(Font/DINdong.woff);
-}
-@font-face {
-  font-family: overused ;
-  src: url(Font/OverusedGrotesk-Roman.woff2);
-}
-@font-face {
-  font-family: New ;
-  src: url(Font/NewHeterodoxMono-Book.otf);
-}
-
-@keyframes slide-in {
-   0%   {
-    translate: -50vw 0;
-  }
-
- 100% {
-    translate: 0 0;
-  }
+    font-family: readme;
+    src: url("fonts/BBBReadMeVF.woff");
 }
