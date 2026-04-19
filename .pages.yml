@@ -35,6 +35,15 @@ content:
           - name: soustype
             label: Type de document
             type: string
+          - name: date
+            label: Date
+            type: string
+          - name: description
+            label: Description
+            type: string
+          - name: lieu
+            label: Lieu
+            type: string
           - name: photos
             label: Photos
             type: image
