@@ -27,13 +27,18 @@ content:
       - name: auteurs
         label: Auteurs
         type: string
-      - name: soustype
-        label: Type de document
-        type: string
-      - name: photos
-        label: Photos
-        type: image
+      - name: documents
+        label: Documents
+        type: object
         list: true
+        fields:
+          - name: soustype
+            label: Type de document
+            type: string
+          - name: photos
+            label: Photos
+            type: image
+            list: true
 
   - name: references
     label: Références
