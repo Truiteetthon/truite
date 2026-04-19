@@ -82,7 +82,7 @@ content:
       - name: url
         label: Lien
         type: string
-
+        
   - name: ressources
     label: Ressources
     type: collection
