@@ -3,7 +3,7 @@ media:
     label: Images
     input: images
     output: images
- 
+
 content:
   - name: projets
     label: Projets
@@ -45,7 +45,7 @@ content:
         label: Photos
         type: image
         list: true
- 
+
   - name: references
     label: Références
     type: collection
@@ -82,7 +82,7 @@ content:
       - name: url
         label: Lien
         type: string
- 
+
   - name: ressources
     label: Ressources
     type: collection
@@ -107,7 +107,7 @@ content:
       - name: description
         label: Description
         type: string
- 
+
   - name: about
     label: À propos
     type: file
