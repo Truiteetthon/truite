@@ -1,19 +1,15 @@
 media:
-  - name: images
-    label: Images
-    input: images
-    output: images
+  input: images
+  output: /images
 
 content:
   - name: projets
     label: Projets
     type: collection
     path: projets
-    view:
-      fields: [projet, année, lieu]
     fields:
       - name: projet
-        label: Titre du projet
+        label: Titre
         type: string
       - name: description
         label: Description
@@ -34,13 +30,6 @@ content:
       - name: soustype
         label: Type de document
         type: string
-        options:
-          - Photos
-          - Dessins
-          - Plans
-          - Rendus
-          - Texte
-          - Scans
       - name: photos
         label: Photos
         type: image
@@ -50,8 +39,6 @@ content:
     label: Références
     type: collection
     path: references
-    view:
-      fields: [titre, type, année]
     fields:
       - name: titre
         label: Titre
@@ -59,13 +46,6 @@ content:
       - name: type
         label: Type
         type: string
-        options:
-          - Livre
-          - Film
-          - Gravure
-          - Photographie
-          - Dessin
-          - Autre
       - name: auteur
         label: Auteur
         type: string
@@ -82,13 +62,11 @@ content:
       - name: url
         label: Lien
         type: string
-        
+
   - name: ressources
     label: Ressources
     type: collection
     path: ressources
-    view:
-      fields: [titre, categorie]
     fields:
       - name: titre
         label: Titre
@@ -99,23 +77,6 @@ content:
       - name: categorie
         label: Catégorie
         type: string
-        options:
-          - Outil
-          - Site
-          - Archive
-          - Autre
       - name: description
         label: Description
         type: string
-
-  - name: about
-    label: À propos
-    type: file
-    file: about/index.md
-    fields:
-      - name: titre
-        label: Titre
-        type: string
-      - name: body
-        label: Contenu
-        type: rich-text
