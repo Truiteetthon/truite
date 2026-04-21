@@ -17,8 +17,8 @@ content:
       - name: année
         label: Année
         type: string
-      - name: type
-        label: Type
+      - name: pratique
+        label: pratique
         type: string
         list: true
       - name: lieu
@@ -32,9 +32,10 @@ content:
         type: object
         list: true
         fields:
-          - name: soustype
+          - name: document
             label: Type de document
             type: string
+            list: true
           - name: date
             label: Date
             type: string
