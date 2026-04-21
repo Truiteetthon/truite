@@ -12,20 +12,24 @@
 <header>
   <a href="/index.html"><b>Rémi Bonin</b></a>
 
-  <p>Type</p>
-  {{ for type of search.values("type").sort() }}
-    <input type="radio" id="{{ type }}" name="fav_language" value="{{ type }}">
-    <label for="{{ type }}">{{ type }}</label><br>
-  {{ /for }}
-
   <p>Pratique</p>
-  {{ for pratiques of search.values("pratique").sort() }}
+  {{ for pratique of search.values("pratique").sort() }}
     <input type="radio" id="{{ pratique }}" name="pratique" value="{{ pratique }}">
     <label for="{{ pratique }}">{{ pratique }}</label><br>
   {{ /for }}
 
-  <p>Documents</p>
-  {{ for document of search.values("document").sort() }}
+  <p>Document</p>
+  {{ set allDocuments = [] }}
+  {{ for post of search.pages("tag=projet") }}
+    {{ for doc of (post.documents ?? []) }}
+      {{ for docType of (doc.document ?? []) }}
+        {{ if !allDocuments.includes(docType) }}
+          {{ set allDocuments = [...allDocuments, docType] }}
+        {{ /if }}
+      {{ /for }}
+    {{ /for }}
+  {{ /for }}
+  {{ for document of allDocuments.sort() }}
     <input type="radio" id="{{ document }}" name="document" value="{{ document }}">
     <label for="{{ document }}">{{ document }}</label><br>
   {{ /for }}
@@ -41,16 +45,9 @@
     <input type="radio" id="{{ lieu }}" name="lieu" value="{{ lieu }}">
     <label for="{{ lieu }}">{{ lieu }}</label><br>
   {{ /for }}
-
-  <p>Mise en page</p>
-  {{ for mise_en_page of search.values("mise_en_page").sort() }}
-    <input type="radio" id="{{ mise_en_page }}" name="mise_en_page" value="{{ mise_en_page }}">
-    <label for="{{ mise_en_page }}">{{ mise_en_page }}</label><br>
-  {{ /for }}
 </header>
 
 
 <script src="/Script.js"></script>
   </body>
-</html>
 </html>

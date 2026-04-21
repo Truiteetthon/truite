@@ -119,39 +119,89 @@ function carouselNav(carousel) {
   if (counter) counter.textContent = index + 1;
 }
 
-// Filtres — définis avant d'être appelés
+// Helpers — lecture des data attributes d'un <li>
+function getLiValues(li) {
+  const pratiques = li.dataset.pratique
+    ? li.dataset.pratique
+        .replace(/"/g, "")
+        .split(",")
+        .map((t) => t.trim())
+    : [];
+  const documents = li.dataset.document
+    ? li.dataset.document
+        .replace(/"/g, "")
+        .split(",")
+        .map((t) => t.trim())
+    : [];
+  const year = (li.dataset.year ?? "").replace(/"/g, "");
+  const lieu = (li.dataset.lieu ?? "").replace(/"/g, "");
+  return { pratiques, documents, year, lieu };
+}
+
+// Filtres
+function getActiveFilters() {
+  return {
+    activePratique: document.querySelector('input[name="pratique"]:checked')
+      ?.value,
+    activeDocument: document.querySelector('input[name="document"]:checked')
+      ?.value,
+    activeYear: document.querySelector('input[name="year"]:checked')?.value,
+    activeLieu: document.querySelector('input[name="lieu"]:checked')?.value,
+  };
+}
+
+function liMatchesFilters(
+  li,
+  { activePratique, activeDocument, activeYear, activeLieu },
+) {
+  const { pratiques, documents, year, lieu } = getLiValues(li);
+  return (
+    (!activePratique || pratiques.includes(activePratique)) &&
+    (!activeDocument || documents.includes(activeDocument)) &&
+    (!activeYear || year === activeYear) &&
+    (!activeLieu || lieu === activeLieu)
+  );
+}
+
 function updateAvailableFilters() {
-  const activeType = document.querySelector(
-    'input[name="fav_language"]:checked',
-  )?.value;
-  const activeYear = document.querySelector(
-    'input[name="year"]:checked',
-  )?.value;
-  const activeLieu = document.querySelector(
-    'input[name="lieu"]:checked',
-  )?.value;
+  const filters = getActiveFilters();
   const allLis = [...document.querySelectorAll("li")];
 
-  // Type
-  document.querySelectorAll('input[name="fav_language"]').forEach((radio) => {
+  // Pour chaque groupe de filtres, on vérifie si une valeur a des résultats
+  // en ignorant le filtre du même groupe (pour permettre le changement de valeur)
+
+  // Pratique
+  document.querySelectorAll('input[name="pratique"]').forEach((radio) => {
     const label = document.querySelector(`label[for="${radio.value}"]`);
     if (!label) return;
-    if (activeType) {
-      // Un type est sélectionné → griser tous les autres
-      label.style.opacity = radio.value === activeType ? "1" : "0.3";
+    if (filters.activePratique) {
+      label.style.opacity =
+        radio.value === filters.activePratique ? "1" : "0.3";
     } else {
-      // Aucun type sélectionné → griser ceux sans résultats
       const hasMatch = allLis.some((li) => {
-        const liTypes = li.dataset.type
-          ? li.dataset.type
-              .replace(/"/g, "")
-              .split(",")
-              .map((t) => t.trim())
-          : [];
+        const { pratiques } = getLiValues(li);
         return (
-          liTypes.includes(radio.value) &&
-          (!activeYear || li.dataset.year.replace(/"/g, "") === activeYear) &&
-          (!activeLieu || li.dataset.lieu.replace(/"/g, "") === activeLieu)
+          pratiques.includes(radio.value) &&
+          liMatchesFilters(li, { ...filters, activePratique: null })
+        );
+      });
+      label.style.opacity = hasMatch ? "1" : "0.3";
+    }
+  });
+
+  // Document
+  document.querySelectorAll('input[name="document"]').forEach((radio) => {
+    const label = document.querySelector(`label[for="${radio.value}"]`);
+    if (!label) return;
+    if (filters.activeDocument) {
+      label.style.opacity =
+        radio.value === filters.activeDocument ? "1" : "0.3";
+    } else {
+      const hasMatch = allLis.some((li) => {
+        const { documents } = getLiValues(li);
+        return (
+          documents.includes(radio.value) &&
+          liMatchesFilters(li, { ...filters, activeDocument: null })
         );
       });
       label.style.opacity = hasMatch ? "1" : "0.3";
@@ -162,20 +212,14 @@ function updateAvailableFilters() {
   document.querySelectorAll('input[name="year"]').forEach((radio) => {
     const label = document.querySelector(`label[for="${radio.value}"]`);
     if (!label) return;
-    if (activeYear) {
-      label.style.opacity = radio.value === activeYear ? "1" : "0.3";
+    if (filters.activeYear) {
+      label.style.opacity = radio.value === filters.activeYear ? "1" : "0.3";
     } else {
       const hasMatch = allLis.some((li) => {
-        const liTypes = li.dataset.type
-          ? li.dataset.type
-              .replace(/"/g, "")
-              .split(",")
-              .map((t) => t.trim())
-          : [];
+        const { year } = getLiValues(li);
         return (
-          li.dataset.year.replace(/"/g, "") === radio.value &&
-          (!activeType || liTypes.includes(activeType)) &&
-          (!activeLieu || li.dataset.lieu.replace(/"/g, "") === activeLieu)
+          year === radio.value &&
+          liMatchesFilters(li, { ...filters, activeYear: null })
         );
       });
       label.style.opacity = hasMatch ? "1" : "0.3";
@@ -186,20 +230,14 @@ function updateAvailableFilters() {
   document.querySelectorAll('input[name="lieu"]').forEach((radio) => {
     const label = document.querySelector(`label[for="${radio.value}"]`);
     if (!label) return;
-    if (activeLieu) {
-      label.style.opacity = radio.value === activeLieu ? "1" : "0.3";
+    if (filters.activeLieu) {
+      label.style.opacity = radio.value === filters.activeLieu ? "1" : "0.3";
     } else {
       const hasMatch = allLis.some((li) => {
-        const liTypes = li.dataset.type
-          ? li.dataset.type
-              .replace(/"/g, "")
-              .split(",")
-              .map((t) => t.trim())
-          : [];
+        const { lieu } = getLiValues(li);
         return (
-          li.dataset.lieu.replace(/"/g, "") === radio.value &&
-          (!activeType || liTypes.includes(activeType)) &&
-          (!activeYear || li.dataset.year.replace(/"/g, "") === activeYear)
+          lieu === radio.value &&
+          liMatchesFilters(li, { ...filters, activeLieu: null })
         );
       });
       label.style.opacity = hasMatch ? "1" : "0.3";
@@ -208,41 +246,31 @@ function updateAvailableFilters() {
 }
 
 function applyFilters() {
-  const activeType = document.querySelector(
-    'input[name="fav_language"]:checked',
-  )?.value;
-  const activeYear = document.querySelector(
-    'input[name="year"]:checked',
-  )?.value;
-  const activeLieu = document.querySelector(
-    'input[name="lieu"]:checked',
-  )?.value;
+  const filters = getActiveFilters();
 
   document.querySelectorAll("li").forEach((li) => {
-    const types = li.dataset.type ? li.dataset.type.split(",") : [];
-    const matchType = !activeType || types.includes(activeType);
-    const matchYear =
-      !activeYear || li.dataset.year.replace(/"/g, "") === activeYear;
-    const matchLieu =
-      !activeLieu || li.dataset.lieu.replace(/"/g, "") === activeLieu;
-    li.style.display = matchType && matchYear && matchLieu ? "flex" : "none";
+    li.style.display = liMatchesFilters(li, filters) ? "flex" : "none";
   });
 
   // Labels actifs en gris
   document.querySelectorAll("label").forEach((label) => {
     label.style.backgroundColor = "white";
   });
-  if (activeType)
+  if (filters.activePratique)
     document
-      .querySelector(`label[for="${activeType}"]`)
+      .querySelector(`label[for="${filters.activePratique}"]`)
       ?.style.setProperty("background-color", "grey");
-  if (activeYear)
+  if (filters.activeDocument)
     document
-      .querySelector(`label[for="${activeYear}"]`)
+      .querySelector(`label[for="${filters.activeDocument}"]`)
       ?.style.setProperty("background-color", "grey");
-  if (activeLieu)
+  if (filters.activeYear)
     document
-      .querySelector(`label[for="${activeLieu}"]`)
+      .querySelector(`label[for="${filters.activeYear}"]`)
+      ?.style.setProperty("background-color", "grey");
+  if (filters.activeLieu)
+    document
+      .querySelector(`label[for="${filters.activeLieu}"]`)
       ?.style.setProperty("background-color", "grey");
 
   updateAvailableFilters();
@@ -251,7 +279,7 @@ function applyFilters() {
 // Listeners filtres
 document
   .querySelectorAll(
-    'input[name="fav_language"], input[name="year"], input[name="lieu"]',
+    'input[name="pratique"], input[name="document"], input[name="year"], input[name="lieu"]',
   )
   .forEach((radio) => {
     radio.addEventListener("change", applyFilters);
