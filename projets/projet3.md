@@ -7,8 +7,8 @@ type:
   - Dessins
 lieu: Métis sur mer
 photos:
-  - images/32.jpg
-  - images/33.jpg
-  - images/35.jpg
-  - images/34.jpg
+  - /images/32.jpg
+  - /images/33.jpg
+  - /images/35.jpg
+  - /images/34.jpg
 ---

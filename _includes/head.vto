@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Rémi Bonin</title>
-    <link href="Style.css" rel="stylesheet">
+    <link href="/Style.css" rel="stylesheet">
   </head>
   <body>
 
@@ -18,6 +18,18 @@
     <label for="{{ type }}">{{ type }}</label><br>
   {{ /for }}
 
+  <p>Pratique</p>
+  {{ for pratiques of search.values("pratique").sort() }}
+    <input type="radio" id="{{ pratique }}" name="pratique" value="{{ pratique }}">
+    <label for="{{ pratique }}">{{ pratique }}</label><br>
+  {{ /for }}
+
+  <p>Documents</p>
+  {{ for document of search.values("document").sort() }}
+    <input type="radio" id="{{ document }}" name="document" value="{{ document }}">
+    <label for="{{ document }}">{{ document }}</label><br>
+  {{ /for }}
+
   <p>Année</p>
   {{ for année of search.values("année").sort().reverse() }}
     <input type="radio" id="{{ année }}" name="year" value="{{ année }}">
@@ -29,9 +41,16 @@
     <input type="radio" id="{{ lieu }}" name="lieu" value="{{ lieu }}">
     <label for="{{ lieu }}">{{ lieu }}</label><br>
   {{ /for }}
+
+  <p>Mise en page</p>
+  {{ for mise_en_page of search.values("mise_en_page").sort() }}
+    <input type="radio" id="{{ mise_en_page }}" name="mise_en_page" value="{{ mise_en_page }}">
+    <label for="{{ mise_en_page }}">{{ mise_en_page }}</label><br>
+  {{ /for }}
 </header>
 
-<script src="Script.js"></script>
+
+<script src="/Script.js"></script>
   </body>
 </html>
 </html>
