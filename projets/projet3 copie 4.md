@@ -2,6 +2,10 @@
 projet: Ça chauffe
 description: Bouillons de légume
 année: "2026"
+pratique:
+  - Architecturale
+  - Critique
+  - Culinaire
 lieu: Bruxelles
 auteurs: Rémi Bonin, Elliot Lepeer
 documents:
