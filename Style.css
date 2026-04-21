@@ -75,13 +75,17 @@ p {
 }
 
 .carousel-desc.active {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
     padding: 12px;
     cursor: pointer;
-    object-fit: cover;
-    background-color: lightgoldenrodyellow;
     width: 300px;
-    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .desc-titre {
@@ -101,6 +105,7 @@ p {
 }
 
 .carousel {
+    position: relative;
     overflow: visible;
     width: 80%;
 }
