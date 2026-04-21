@@ -1,9 +1,15 @@
 ---
 projet: Station de pompage Tiergarten
 année: "2026"
+pratique:
+  - Photographique
+  - Documentaire
 lieu: Berlin
 documents:
-  - date: "2026"
+  - document:
+      - Photo
+      - Documentation
+    date: "2026"
     description: Epreuve argentique d'un projet par Oswald Mathias Ungers et Stefan Schroth
     lieu: Berlin
     photos:
