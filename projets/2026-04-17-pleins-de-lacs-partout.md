@@ -3,6 +3,7 @@ projet: Pleins de lacs partout
 année: "2025"
 pratique:
   - Architecturale
+  - Critique
 lieu: Bruxelles
 documents:
   - document:
