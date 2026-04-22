@@ -3,8 +3,8 @@ projet: Jean Marie Roy
 description: Documentation d'un projet de Jean Marie Roy
 année: "2023"
 pratique:
-  - Documentaite
   - Photographique
+  - Documentaire
 lieu: Québec
 auteurs: Rémi Bonin accompagné par Jérémie Gaudreault
 documents:
