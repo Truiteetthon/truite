@@ -2,8 +2,8 @@
 projet: Station de pompage Tiergarten
 année: "2026"
 pratique:
-  - Photographique
   - Documentaire
+  - Photographique
 lieu: Berlin
 documents:
   - document:
