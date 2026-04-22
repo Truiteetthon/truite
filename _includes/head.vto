@@ -12,6 +12,12 @@
 <header>
   <a href="/index.html"><b>Rémi Bonin</b></a>
 
+  <p>Type</p>
+  {{ for cat of search.values("categorie").sort() }}
+    <input type="radio" id="{{ cat }}" name="categorie" value="{{ cat }}">
+    <label for="{{ cat }}">{{ cat }}</label><br>
+  {{ /for }}
+
   <p>Pratique</p>
   {{ for pratique of search.values("pratique").sort() }}
     <input type="radio" id="{{ pratique }}" name="pratique" value="{{ pratique }}">

@@ -1,4 +1,5 @@
-// Tailles et positions aléatoires
+// ─── Tailles et positions aléatoires ───────────────────────────────────────
+
 document.querySelectorAll("li").forEach((li) => {
   const carousel = li.querySelector(".carousel");
   if (!carousel) return;
@@ -12,13 +13,15 @@ document.querySelectorAll("li").forEach((li) => {
   li.style.zIndex = 1;
 });
 
-// Shuffle
+// ─── Shuffle ────────────────────────────────────────────────────────────────
+
 const ul = document.querySelector("ul");
 const lis = [...ul.querySelectorAll("li")];
 lis.sort(() => Math.random() - 0.5);
 lis.forEach((li) => ul.appendChild(li));
 
-// Drag
+// ─── Drag ───────────────────────────────────────────────────────────────────
+
 let wasDragging = false;
 let zCounter = 10;
 
@@ -26,15 +29,30 @@ document.querySelectorAll("li").forEach((li) => {
   let isDragging = false;
   let startX, startY, origX, origY;
 
+  function getActiveTarget() {
+    return (
+      li.querySelector(".carousel-img.active") ||
+      li.querySelector(".carousel-desc.active")
+    );
+  }
+
   li.addEventListener("mousedown", (e) => {
+    const activeTarget = getActiveTarget();
+    if (!activeTarget) return;
+    const onImg = e.target === activeTarget;
+    const onDesc =
+      e.target.closest(".carousel-desc") &&
+      li.querySelector(".carousel-desc.active");
+    if (!onImg && !onDesc) return;
+
     e.preventDefault();
     isDragging = false;
     wasDragging = false;
     startX = e.clientX;
     startY = e.clientY;
-    const transform = new DOMMatrix(getComputedStyle(li).transform);
-    origX = transform.m41;
-    origY = transform.m42;
+    const matrix = new DOMMatrix(getComputedStyle(li).transform);
+    origX = matrix.m41;
+    origY = matrix.m42;
 
     zCounter++;
     li.style.zIndex = zCounter;
@@ -52,13 +70,20 @@ document.querySelectorAll("li").forEach((li) => {
     }
 
     function onUp() {
-      li.style.cursor = "grab";
+      li.style.cursor = "default";
       document.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseup", onUp);
     }
 
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mouseup", onUp);
+  });
+
+  li.addEventListener("mouseover", (e) => {
+    const activeImg = li.querySelector(".carousel-img.active");
+    const onActive =
+      e.target === activeImg || e.target.closest(".carousel-desc.active");
+    li.style.cursor = onActive ? "grab" : "default";
   });
 
   li.addEventListener("click", (e) => {
@@ -69,19 +94,19 @@ document.querySelectorAll("li").forEach((li) => {
   });
 });
 
-// Carrousel
+// ─── Carrousel ──────────────────────────────────────────────────────────────
+
 document.querySelectorAll(".carousel").forEach((carousel) => {
   carousel.addEventListener("click", (e) => {
     if (wasDragging) {
       wasDragging = false;
       return;
     }
-    if (
-      !e.target.classList.contains("carousel-img") &&
-      !e.target.classList.contains("carousel-desc") &&
-      !e.target.closest(".carousel-desc")
-    )
-      return;
+    const onActiveImg =
+      e.target.classList.contains("carousel-img") &&
+      e.target.classList.contains("active");
+    const onDesc = e.target.closest(".carousel-desc");
+    if (!onActiveImg && !onDesc) return;
 
     zCounter++;
     carousel.closest("li").style.zIndex = zCounter;
@@ -111,7 +136,7 @@ function carouselNav(carousel) {
   }
 
   imgs[index].classList.remove("active");
-  index = index + 1;
+  index += 1;
   imgs[index].classList.add("active");
   carousel.dataset.index = index;
 
@@ -119,43 +144,45 @@ function carouselNav(carousel) {
   if (counter) counter.textContent = index + 1;
 }
 
-// Helpers — lecture des data attributes d'un <li>
+// ─── Filtres ─────────────────────────────────────────────────────────────────
+
 function getLiValues(li) {
-  const pratiques = li.dataset.pratique
-    ? li.dataset.pratique
-        .replace(/"/g, "")
-        .split(",")
-        .map((t) => t.trim())
-    : [];
-  const documents = li.dataset.document
-    ? li.dataset.document
-        .replace(/"/g, "")
-        .split(",")
-        .map((t) => t.trim())
-    : [];
-  const year = (li.dataset.year ?? "").replace(/"/g, "");
-  const lieu = (li.dataset.lieu ?? "").replace(/"/g, "");
-  return { pratiques, documents, year, lieu };
+  const clean = (str) => (str ?? "").replace(/"/g, "").trim();
+  const toList = (str) =>
+    str
+      ? str
+          .replace(/"/g, "")
+          .split(",")
+          .map((t) => t.trim())
+      : [];
+  return {
+    categorie: clean(li.dataset.categorie),
+    pratiques: toList(li.dataset.pratique),
+    documents: toList(li.dataset.document),
+    year: clean(li.dataset.year),
+    lieu: clean(li.dataset.lieu),
+  };
 }
 
-// Filtres
 function getActiveFilters() {
+  const val = (name) =>
+    document.querySelector(`input[name="${name}"]:checked`)?.value;
   return {
-    activePratique: document.querySelector('input[name="pratique"]:checked')
-      ?.value,
-    activeDocument: document.querySelector('input[name="document"]:checked')
-      ?.value,
-    activeYear: document.querySelector('input[name="year"]:checked')?.value,
-    activeLieu: document.querySelector('input[name="lieu"]:checked')?.value,
+    activeCategorie: val("categorie"),
+    activePratique: val("pratique"),
+    activeDocument: val("document"),
+    activeYear: val("year"),
+    activeLieu: val("lieu"),
   };
 }
 
 function liMatchesFilters(
   li,
-  { activePratique, activeDocument, activeYear, activeLieu },
+  { activeCategorie, activePratique, activeDocument, activeYear, activeLieu },
 ) {
-  const { pratiques, documents, year, lieu } = getLiValues(li);
+  const { categorie, pratiques, documents, year, lieu } = getLiValues(li);
   return (
+    (!activeCategorie || categorie === activeCategorie) &&
     (!activePratique || pratiques.includes(activePratique)) &&
     (!activeDocument || documents.includes(activeDocument)) &&
     (!activeYear || year === activeYear) &&
@@ -167,81 +194,57 @@ function updateAvailableFilters() {
   const filters = getActiveFilters();
   const allLis = [...document.querySelectorAll("li")];
 
-  // Pour chaque groupe de filtres, on vérifie si une valeur a des résultats
-  // en ignorant le filtre du même groupe (pour permettre le changement de valeur)
+  function updateGroup(name, matchFn) {
+    document.querySelectorAll(`input[name="${name}"]`).forEach((radio) => {
+      const label = document.querySelector(`label[for="${radio.value}"]`);
+      if (!label) return;
+      const isActive =
+        filters[`active${name.charAt(0).toUpperCase() + name.slice(1)}`];
+      if (isActive) {
+        label.style.opacity = radio.value === isActive ? "1" : "0.3";
+      } else {
+        const hasMatch = allLis.some((li) => matchFn(li, radio.value));
+        label.style.opacity = hasMatch ? "1" : "0.3";
+      }
+    });
+  }
 
-  // Pratique
-  document.querySelectorAll('input[name="pratique"]').forEach((radio) => {
-    const label = document.querySelector(`label[for="${radio.value}"]`);
-    if (!label) return;
-    if (filters.activePratique) {
-      label.style.opacity =
-        radio.value === filters.activePratique ? "1" : "0.3";
-    } else {
-      const hasMatch = allLis.some((li) => {
-        const { pratiques } = getLiValues(li);
-        return (
-          pratiques.includes(radio.value) &&
-          liMatchesFilters(li, { ...filters, activePratique: null })
-        );
-      });
-      label.style.opacity = hasMatch ? "1" : "0.3";
-    }
+  updateGroup("categorie", (li, val) => {
+    const { categorie } = getLiValues(li);
+    return (
+      categorie === val &&
+      liMatchesFilters(li, { ...filters, activeCategorie: null })
+    );
   });
 
-  // Document
-  document.querySelectorAll('input[name="document"]').forEach((radio) => {
-    const label = document.querySelector(`label[for="${radio.value}"]`);
-    if (!label) return;
-    if (filters.activeDocument) {
-      label.style.opacity =
-        radio.value === filters.activeDocument ? "1" : "0.3";
-    } else {
-      const hasMatch = allLis.some((li) => {
-        const { documents } = getLiValues(li);
-        return (
-          documents.includes(radio.value) &&
-          liMatchesFilters(li, { ...filters, activeDocument: null })
-        );
-      });
-      label.style.opacity = hasMatch ? "1" : "0.3";
-    }
+  updateGroup("pratique", (li, val) => {
+    const { pratiques } = getLiValues(li);
+    return (
+      pratiques.includes(val) &&
+      liMatchesFilters(li, { ...filters, activePratique: null })
+    );
   });
 
-  // Année
-  document.querySelectorAll('input[name="year"]').forEach((radio) => {
-    const label = document.querySelector(`label[for="${radio.value}"]`);
-    if (!label) return;
-    if (filters.activeYear) {
-      label.style.opacity = radio.value === filters.activeYear ? "1" : "0.3";
-    } else {
-      const hasMatch = allLis.some((li) => {
-        const { year } = getLiValues(li);
-        return (
-          year === radio.value &&
-          liMatchesFilters(li, { ...filters, activeYear: null })
-        );
-      });
-      label.style.opacity = hasMatch ? "1" : "0.3";
-    }
+  updateGroup("document", (li, val) => {
+    const { documents } = getLiValues(li);
+    return (
+      documents.includes(val) &&
+      liMatchesFilters(li, { ...filters, activeDocument: null })
+    );
   });
 
-  // Lieu
-  document.querySelectorAll('input[name="lieu"]').forEach((radio) => {
-    const label = document.querySelector(`label[for="${radio.value}"]`);
-    if (!label) return;
-    if (filters.activeLieu) {
-      label.style.opacity = radio.value === filters.activeLieu ? "1" : "0.3";
-    } else {
-      const hasMatch = allLis.some((li) => {
-        const { lieu } = getLiValues(li);
-        return (
-          lieu === radio.value &&
-          liMatchesFilters(li, { ...filters, activeLieu: null })
-        );
-      });
-      label.style.opacity = hasMatch ? "1" : "0.3";
-    }
+  updateGroup("year", (li, val) => {
+    const { year } = getLiValues(li);
+    return (
+      year === val && liMatchesFilters(li, { ...filters, activeYear: null })
+    );
+  });
+
+  updateGroup("lieu", (li, val) => {
+    const { lieu } = getLiValues(li);
+    return (
+      lieu === val && liMatchesFilters(li, { ...filters, activeLieu: null })
+    );
   });
 }
 
@@ -252,34 +255,35 @@ function applyFilters() {
     li.style.display = liMatchesFilters(li, filters) ? "flex" : "none";
   });
 
-  // Labels actifs en gris
-  document.querySelectorAll("label").forEach((label) => {
-    label.style.backgroundColor = "white";
-  });
-  if (filters.activePratique)
-    document
-      .querySelector(`label[for="${filters.activePratique}"]`)
-      ?.style.setProperty("background-color", "grey");
-  if (filters.activeDocument)
-    document
-      .querySelector(`label[for="${filters.activeDocument}"]`)
-      ?.style.setProperty("background-color", "grey");
-  if (filters.activeYear)
-    document
-      .querySelector(`label[for="${filters.activeYear}"]`)
-      ?.style.setProperty("background-color", "grey");
-  if (filters.activeLieu)
-    document
-      .querySelector(`label[for="${filters.activeLieu}"]`)
-      ?.style.setProperty("background-color", "grey");
+  // Reset labels
+  document
+    .querySelectorAll("label")
+    .forEach((l) => (l.style.backgroundColor = "white"));
+
+  // Griser les labels actifs
+  const {
+    activeCategorie,
+    activePratique,
+    activeDocument,
+    activeYear,
+    activeLieu,
+  } = filters;
+  [activeCategorie, activePratique, activeDocument, activeYear, activeLieu]
+    .filter(Boolean)
+    .forEach((val) => {
+      document
+        .querySelector(`label[for="${val}"]`)
+        ?.style.setProperty("background-color", "grey");
+    });
 
   updateAvailableFilters();
 }
 
-// Listeners filtres
+// ─── Listeners ───────────────────────────────────────────────────────────────
+
 document
   .querySelectorAll(
-    'input[name="pratique"], input[name="document"], input[name="year"], input[name="lieu"]',
+    'input[name="categorie"], input[name="pratique"], input[name="document"], input[name="year"], input[name="lieu"]',
   )
   .forEach((radio) => {
     radio.addEventListener("change", applyFilters);
@@ -297,5 +301,6 @@ document
     });
   });
 
-// Init au chargement
+// ─── Init ────────────────────────────────────────────────────────────────────
+
 updateAvailableFilters();

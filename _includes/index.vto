@@ -18,6 +18,7 @@ layout: head.vto
               {{ set docPhotos = doc.photos ?? [] }}
 
               <li
+                data-categorie="{{ post.categorie }}"
                 data-pratique="{{ post.pratique |> join(',') }}"
                 data-document="{{ docTypes |> join(',') }}"
                 data-year="{{ doc.date ?? post.année }}"
@@ -34,10 +35,12 @@ layout: head.vto
                   {{ /for }}
 
                   <div class="carousel-desc">
+                    <div>{{ post.auteurs }}</div>
                     <div class="desc-titre">{{ post.projet }}</div>
                     <div>{{ doc.description }}</div>
-                    <div>{{ doc.date ?? post.année }} — {{ doc.lieu ?? post.lieu }}</div>
-                    <div>{{ post.auteurs }}</div>
+                    <div>{{ doc.lieu ?? post.lieu }}</div>
+                    <div>{{ doc.date ?? post.année }}</div>
+
                   </div>
                 </div>
               </li>
