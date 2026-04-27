@@ -14,4 +14,5 @@ documents:
     lieu: Québec
     photos:
       - /images/Capture d’écran, le 2026-04-27 à 19.13.57.png
+      - /images/Capture d’écran, le 2026-04-27 à 19.53.42.png
 ---
