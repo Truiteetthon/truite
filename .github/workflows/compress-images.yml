@@ -1,0 +1,37 @@
+name: Compress Images
+
+on:
+  push:
+    paths:
+      - 'images/**'
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Install ffmpeg
+        run: sudo apt-get install -y ffmpeg
+
+      - name: Compress images
+        run: |
+          for img in images/**/*.{jpg,jpeg,png,webp} images/*.{jpg,jpeg,png,webp}; do
+            [ -f "$img" ] || continue
+            before=$(wc -c < "$img")
+            ffmpeg -i "$img" -q:v 4 "${img}.tmp" -y -loglevel error
+            mv "${img}.tmp" "$img"
+            after=$(wc -c < "$img")
+            gain=$(awk "BEGIN {printf \"%.1f\", (1 - $after / $before) * 100}")
+            echo "✅ $img : ${gain}% de gain"
+          done
+
+      - name: Commit compressed images
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git add images/
+          git diff --cached --quiet || git commit -m "chore: compress images"
+          git push
