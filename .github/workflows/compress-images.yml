@@ -3,7 +3,7 @@ name: Compress Images
 on:
   push:
     paths:
-      - 'images/**'
+      - "images/**"
 
 jobs:
   compress:
@@ -18,14 +18,21 @@ jobs:
 
       - name: Compress images
         run: |
-          for img in images/**/*.{jpg,jpeg,png,webp} images/*.{jpg,jpeg,png,webp}; do
-            [ -f "$img" ] || continue
+          find images/ -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) | while read img; do
+            ext="${img##*.}"
+            tmp="${img%.*}_tmp.${ext}"
             before=$(wc -c < "$img")
-            ffmpeg -i "$img" -q:v 4 "${img}.tmp" -y -loglevel error
-            mv "${img}.tmp" "$img"
-            after=$(wc -c < "$img")
-            gain=$(awk "BEGIN {printf \"%.1f\", (1 - $after / $before) * 100}")
-            echo "✅ $img : ${gain}% de gain"
+
+            ffmpeg -i "$img" -q:v 4 "$tmp" -y -loglevel error
+
+            if [ -f "$tmp" ]; then
+              mv "$tmp" "$img"
+              after=$(wc -c < "$img")
+              gain=$(awk "BEGIN {printf \"%.1f\", (1 - $after / $before) * 100}")
+              echo "✅ $img : ${gain}% de gain"
+            else
+              echo "❌ Échec : $img"
+            fi
           done
 
       - name: Commit compressed images
