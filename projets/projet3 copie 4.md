@@ -24,4 +24,15 @@ documents:
       - /images/F.png
       - /images/F2.png
       - /images/E.png
+  - document:
+      - Photo
+    date: "2026"
+    description: "Photo de l'évènement "
+    lieu: Bruxelles
+    photos:
+      - /images/compressed_1000003134.jpg
+      - /images/compressed_Unknown.jpeg
+      - /images/compressed_Unknown-1.jpeg
+      - /images/compressed_1000003146.jpg
+      - /images/compressed_1000003147.jpg
 ---
