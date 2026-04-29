@@ -1,30 +1,41 @@
 html {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: inter;
     font-variant: normal;
-    font-size: 12px;
-    background-color: white;
-    color: black;
+    font-size: 30px;
+    background-color: black;
+    color: white;
     background-size: cover;
 }
+
+body {
+    margin-left: 20vw;
+}
+
 a {
-    color: black;
+    color: blue;
     text-decoration: none;
-    background-color: white;
-    border: solid 1px black;
-    display: flex;
-    padding: 1px;
-    width: fit-content;
 }
 
 a:hover {
-    background-color: grey;
+    color: yellow;
 }
 
 header {
     position: fixed;
-    top: 5px;
-    left: 5px;
+    top: 0px;
+    left: 0px;
     z-index: 999;
+    width: 100vw; /* pleine largeur pour le texte */
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    pointer-events: none; /* transparent par défaut */
+    mix-blend-mode: difference;
+}
+
+header > * {
+    pointer-events: auto; /* mais les enfants sont cliquables */
+    width: fit-content; /* chaque élément prend sa largeur naturelle */
 }
 
 ul {
@@ -34,6 +45,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(3, 25vw);
     gap: 0px;
+    transform: translateX(-20vw);
 }
 
 li {
@@ -49,25 +61,55 @@ input {
 }
 
 label {
-    background-color: white;
-    border: solid 1px black;
-    display: flex;
-    padding: 1px;
-    width: fit-content;
-    margin-bottom: -12px;
+    display: inline-block;
+    color: blue;
+    min-width: 20%;
 }
 
 label:hover {
-    background-color: grey;
+    color: yellow;
 }
 
 p {
-    background-color: lightgrey;
-    border: solid 1px black;
-    display: flex;
-    padding: 1px;
     width: fit-content;
-    margin-bottom: 2px;
+    margin: 0px;
+    min-width: 20%;
+}
+
+.space {
+    height: 30px;
+    width: 20%;
+}
+
+.popup {
+    display: non;
+    font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    min-width: 200px;
+    text-align: left;
+    cursor: pointer;
+    z-index: 10;
+    mix-blend-mode: difference;
+    color: white;
+    font-size: 30px;
+    max-height: 100vh;
+    overflow: scroll;
+    padding: 10px;
+}
+
+.popup.active {
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
 }
 
 .carousel-desc {
@@ -128,7 +170,95 @@ p {
     color: rgba(0, 0, 0, 0.7);
 }
 
+#portfolio-view {
+    padding: 5vw 5vw 5vw 28vw;
+}
+
+.projet-card {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    margin-bottom: 80px;
+    align-items: flex-start;
+}
+
+.projet-text {
+    width: 200px;
+    flex-shrink: 0;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.projet-pile {
+    position: relative;
+    flex: 1;
+    height: 40vh;
+    cursor: pointer;
+    transition: height 0.5s ease;
+}
+
+/* Cartes empilées */
+.pile-carte {
+    position: absolute;
+    width: 35vw;
+    height: 40vh;
+    border: 1px solid black;
+    background: white;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.pile-carte:nth-child(1) {
+    transform: translate(0px, 0px) rotate(-1deg);
+    z-index: 10;
+}
+.pile-carte:nth-child(2) {
+    transform: translate(4px, 4px) rotate(0.5deg);
+    z-index: 9;
+}
+.pile-carte:nth-child(3) {
+    transform: translate(8px, 8px) rotate(-0.5deg);
+    z-index: 8;
+}
+.pile-carte:nth-child(4) {
+    transform: translate(12px, 12px) rotate(1deg);
+    z-index: 7;
+}
+.pile-carte:nth-child(n + 5) {
+    transform: translate(16px, 16px) rotate(0deg);
+    z-index: 6;
+}
+
+/* Images dans la carte */
+.pile-carte .carousel-img {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.pile-carte .carousel-img.active {
+    display: block;
+}
+
+/* Pile ouverte — cascade verticale */
+.projet-pile.open {
+    height: auto;
+    cursor: default;
+}
+
+.projet-pile.open .pile-carte {
+    position: relative !important;
+    transform: translate(0, 0) rotate(0deg) !important;
+    width: 35vw;
+    height: 40vh;
+    margin-bottom: 20px;
+}
 @font-face {
-    font-family: readme;
-    src: url("fonts/BBBReadMeVF.woff");
+    font-family: me;
+    src: url("fonts/moi3.otf");
+}
+
+@font-face {
+    font-family: inter;
+    src: url("fonts/Inter-Medium.woff2");
 }

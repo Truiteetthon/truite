@@ -2,28 +2,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Rémi Bonin</title>
+    <title>Remi Bonin</title>
     <link href="/Style.css" rel="stylesheet">
   </head>
+
   <body>
 
 {{ content }}
 
 <header>
-  <a href="/index.html"><b>Rémi Bonin</b></a>
+  <p>Conçu par <a href="/index.html">Remi Bonin</a>, ce site est a la fois un espace de presentation, mais aussi un outil de conception.
+  L'ordre d'affichage est modifie a chaque visite et les differentes images peuvent être deplacer.
+  Rassemblant mes projets, mes ressources et mes references cet espace devient un espace de travail ou l'ensemble des donnees sont issus de ma curration personnelle offrant la possibilite de creer une approche conceptuelle coherente.
+  </p>
 
+
+  <div class="space"></div>
   <p>Type</p>
   {{ for cat of search.values("categorie").sort() }}
     <input type="radio" id="{{ cat }}" name="categorie" value="{{ cat }}">
     <label for="{{ cat }}">{{ cat }}</label><br>
   {{ /for }}
 
+    <div class="space"></div>
   <p>Pratique</p>
   {{ for pratique of search.values("pratique").sort() }}
     <input type="radio" id="{{ pratique }}" name="pratique" value="{{ pratique }}">
     <label for="{{ pratique }}">{{ pratique }}</label><br>
   {{ /for }}
 
+    <div class="space"></div>
   <p>Document</p>
   {{ set allDocuments = [] }}
   {{ for post of search.pages("tag=projet") }}
@@ -40,18 +48,68 @@
     <label for="{{ document }}">{{ document }}</label><br>
   {{ /for }}
 
+    <div class="space"></div>
   <p>Année</p>
-  {{ for année of search.values("année").sort().reverse() }}
-    <input type="radio" id="{{ année }}" name="year" value="{{ année }}">
-    <label for="{{ année }}">{{ année }}</label><br>
+  {{ for annee of search.values("année").sort().reverse() }}
+  <input type="radio" id="{{ annee }}" name="year" value="{{ annee }}">
+  <label for="{{ annee }}">{{ annee }}</label><br>
   {{ /for }}
 
+  <div class="space"></div>
   <p>Lieu</p>
   {{ for lieu of search.values("lieu").sort() }}
     <input type="radio" id="{{ lieu }}" name="lieu" value="{{ lieu }}">
     <label for="{{ lieu }}">{{ lieu }}</label><br>
   {{ /for }}
+
+    <div class="space"></div>
+    <p> A propos :<br>
+  Mon travail est le resultat de multiples explorations issues de l’etude de diverses
+  methodologies. Chaque projet est alimente par ma volonte de decouvrir de
+  nouvelles facons de representer et de travailler. Le processus de conception fait
+  partie integrante du projet, marquant les points importants de la reflexion et
+  devenant, a la fin, la partie principale de la representation du projet.<br><br>
+      Dans chaque projet, je souhaite, par l’architecture, offrir des moments d’evasion
+      qui promeuvent la lenteur, l’admiration et la bienveillance. Par l’elaboration d’une
+      pratique pluridisciplinaire, je souhaite integrer ces elements dans chaque espace
+  imaginable.<br><br>
+    </p>
+    <div class="space"></div>
+        <p>
+      Contact <br><br>
+      rbonin.rbonin@gmail.com<br>
+      remibonin.com<br>
+      Montréal, Québec, Bruxelles
+      </p>
+      <div class="space"></div>
+        <p>
+      CV
+
+<br>
+
+Formations<br>
+Baccaleuréat en architecture - Université Laval ( 2023 -
+... )<br>
+Technologie de l’architecture - Cégep de St-Laurent ( 2020 - 2023 )<br>
+ASP construction ( 2020 )<br><br>
+Emplois<br>
+Technicien en architecture chez Jérôme Lapierre Architecte ( 2023 - 2025 )<br>
+Stage chez Philip Hazan Architecte ( Hiver 2023 )<br>
+Stage avec l’architecte Nicolas Chaudier ( Été 2022 )<br>
+Stage avec l'architecte Irina Nazarova ( Été 2022 )<br>
+Tuteur en technologie de l'architecture ( 2022 - 2023 )<br>
+Stage au festival des Jardins de Métis ( Été 2021 )<br><br>
+Implications et bénévolat<br>
+Co-président Comité culturel EAUL ( 2024-2025 )<br>
+Bénévole FabLab ULaval ( 2024-2025 )<br><br>
+Reconnaissances<br>
+Bourse Première Ovation avec Pierre-Ulric Gagné, Philippe-Antoine Bélanger (2026)<br>
+Mention spéciale au concours international de jardins avec Vincent Morrier ( 2025 )<br>
+Nominé pour meilleure présentation à l'épreuve synthèse de programme ( 2023 )<br>
+Nominé pour meilleure conception à l'épreuve synthèse de programme ( 2023 )<br>
+        </p>
 </header>
+
 
 
 <script src="/Script.js"></script>

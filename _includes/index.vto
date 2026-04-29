@@ -48,7 +48,52 @@ layout: head.vto
           {{ /for }}
       </ul>
 
+      <!-- Vue Portfolio -->
+      <div id="portfolio-view" style="display: none; padding: 5vw 5vw 5vw 28vw;">
+        {{ for post of search.pages("tag=projet", "année=desc") }}
+          <div class="projet-card">
 
+            <div class="projet-text">
+              <div class="desc-titre">{{ post.projet }}</div>
+              <div>{{ post.description }}</div>
+              <div>{{ post.année }} — {{ post.lieu }}</div>
+              <div>{{ post.auteurs }}</div>
+            </div>
+
+            <div class="projet-pile">
+              {{ for doc of post.documents }}
+                {{ set docTypes = doc.document ?? [] }}
+                {{ set docPhotos = doc.photos ?? [] }}
+                <div class="pile-carte"
+                     data-index="0"
+                     data-categorie="{{ post.categorie }}"
+                     data-pratique="{{ post.pratique |> join(',') }}"
+                     data-document="{{ docTypes |> join(',') }}"
+                     data-year="{{ doc.date ?? post.année }}"
+                     data-lieu="{{ doc.lieu ?? post.lieu }}">
+                  {{ for i, src of docPhotos }}
+                    <img
+                      src="{{ src }}"
+                      alt="{{ post.projet }}"
+                      class="carousel-img{{ if i === 0 }} active{{ /if }}"
+                      style="cursor: pointer;"
+                      loading="{{ if i === 0 }}eager{{ else }}lazy{{ /if }}"
+                    />
+                  {{ /for }}
+                  <div class="carousel-desc">
+                    <div>{{ post.auteurs }}</div>
+                    <div class="desc-titre">{{ post.projet }}</div>
+                    <div>{{ doc.description }}</div>
+                    <div>{{ doc.lieu ?? post.lieu }}</div>
+                    <div>{{ doc.date ?? post.année }}</div>
+                  </div>
+                </div>
+              {{ /for }}
+            </div>
+
+          </div>
+        {{ /for }}
+      </div>
   </body>
 {{ content }}
 </html>

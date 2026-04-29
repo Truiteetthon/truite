@@ -258,7 +258,7 @@ function applyFilters() {
   // Reset labels
   document
     .querySelectorAll("label")
-    .forEach((l) => (l.style.backgroundColor = "white"));
+    .forEach((l) => (l.style.backgroundColor = "transparent"));
 
   // Griser les labels actifs
   const {
@@ -273,7 +273,7 @@ function applyFilters() {
     .forEach((val) => {
       document
         .querySelector(`label[for="${val}"]`)
-        ?.style.setProperty("background-color", "grey");
+        ?.style.setProperty("background-color", "transparent");
     });
 
   updateAvailableFilters();
@@ -304,3 +304,73 @@ document
 // ─── Init ────────────────────────────────────────────────────────────────────
 
 updateAvailableFilters();
+
+// ─── Switch vue ──────────────────────────────────────────────────────────────
+
+function switchView(view) {
+  const chaosView = document.querySelector("ul");
+  const portfolioView = document.getElementById("portfolio-view");
+  const btnChaos = document.getElementById("btn-chaos");
+  const btnPortfolio = document.getElementById("btn-portfolio");
+
+  if (view === "chaos") {
+    chaosView.style.display = "grid";
+    portfolioView.style.display = "none";
+    if (btnChaos) btnChaos.style.color = "black";
+    if (btnPortfolio) btnPortfolio.style.color = "blue";
+  } else {
+    chaosView.style.display = "none";
+    portfolioView.style.display = "block";
+    if (btnPortfolio) btnPortfolio.style.color = "black";
+    if (btnChaos) btnChaos.style.color = "blue";
+  }
+}
+
+// ─── Pile portfolio ──────────────────────────────────────────────────────────
+
+function togglePile(pile) {
+  const isOpen = pile.classList.contains("open");
+
+  if (!isOpen) {
+    // Fermer toutes les autres piles
+    document.querySelectorAll(".projet-pile.open").forEach((p) => {
+      p.classList.remove("open");
+    });
+    pile.classList.add("open");
+
+    // Animation d'entrée avec délai par carte
+    const cartes = pile.querySelectorAll(".pile-carte");
+    cartes.forEach((carte, i) => {
+      carte.style.transitionDelay = `${i * 60}ms`;
+    });
+  } else {
+    // Refermer
+    const cartes = pile.querySelectorAll(".pile-carte");
+    cartes.forEach((carte, i) => {
+      carte.style.transitionDelay = `${(cartes.length - i) * 40}ms`;
+    });
+    pile.classList.remove("open");
+  }
+}
+
+// Clic sur pile fermée → ouvrir
+// Clic sur image dans pile ouverte → carrousel
+document.querySelectorAll(".projet-pile").forEach((pile) => {
+  pile.addEventListener("click", (e) => {
+    if (!pile.classList.contains("open")) {
+      togglePile(pile);
+      return;
+    }
+
+    // Pile ouverte — clic sur image active → carouselNav
+    const carte = e.target.closest(".pile-carte");
+    if (!carte) return;
+    const onActiveImg =
+      e.target.classList.contains("carousel-img") &&
+      e.target.classList.contains("active");
+    const onDesc = e.target.closest(".carousel-desc");
+    if (!onActiveImg && !onDesc) return;
+
+    carouselNav(carte);
+  });
+});
