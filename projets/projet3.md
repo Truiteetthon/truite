@@ -1,7 +1,7 @@
 ---
 projet: "Le langage de l'érosion "
 description: >-
-  Pourquoi traduire le phénomène de l’érosion ?   
+  Pourquoi traduire le phénomène de l’érosion ?  
 
   La séparation entre la mer et la terre est sujette à des changements au fil du
   temps. C’est ici le dialogue entre les particularités géologiques et
@@ -15,7 +15,7 @@ description: >-
   soient physiques ou théoriques. 
 
 
-  Comment traduire le phénomène de l’érosion ?   
+  Comment traduire le phénomène de l’érosion ?  
 
   Utiliser la grève de Métis-sur-Mer comme terrain d’études à permis de
   comprendre les particularités de la côte. Le dialogue entre les secteurs plus
@@ -36,7 +36,7 @@ documents:
       - Photo
     date: "2024"
     description: Photos de la l'effet de l'érosion sur la berge près des jardins de métis.
-    lieu: Métis dur mer
+    lieu: Métis sur mer
     photos:
       - /images/compressed_IMG_3334-1.jpg
       - /images/compressed_IMG_3351.jpg
