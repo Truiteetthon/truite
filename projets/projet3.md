@@ -61,4 +61,14 @@ documents:
         court d'eau.jpg
       - /images/Projets/Le language de
         l'érosion/Images/Photos/compressed_elyme.jpg
+  - document:
+      - Rendu
+    date: "2024"
+    description: Rendus de l'installation proposé pour le festival des Jardins de Métis
+    lieu: Métis sur mer
+    photos:
+      - /images/Projets/Le language de l'érosion/Images/Rendus/compressed_rendu
+        2.png
+      - /images/Projets/Le language de l'érosion/Images/Rendus/compressed_rendu
+        1.jpg
 ---
