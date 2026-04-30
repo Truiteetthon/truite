@@ -13,7 +13,7 @@ content:
         type: string
       - name: description
         label: Description
-        type: string
+        type: rich-text
       - name: année
         label: Année
         type: string
