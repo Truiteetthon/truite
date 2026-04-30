@@ -48,4 +48,17 @@ documents:
       - /images/Projets/Le language de l'érosion/Images/Dessins/elevation.jpg
       - /images/Projets/Le language de l'érosion/Images/Dessins/axonometrie.jpg
       - /images/Projets/Le language de l'érosion/Images/Dessins/plantes.jpg
+  - document:
+      - Photo
+      - Documentation
+    date: "2024"
+    description: Épreuve argentique du site des Jardins de Métis
+    lieu: Métis sur mer
+    photos:
+      - /images/Projets/Le language de l'érosion/Images/Photos/compressed_le
+        site.jpg
+      - /images/Projets/Le language de l'érosion/Images/Photos/compressed_le
+        court d'eau.jpg
+      - /images/Projets/Le language de
+        l'érosion/Images/Photos/compressed_elyme.jpg
 ---
