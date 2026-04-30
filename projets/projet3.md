@@ -26,6 +26,9 @@ description: >-
   résilients/érodés) agissent sur une frontière au fil du temps (représentées
   par une succession de voiles transparents).
 année: "2024"
+pratique:
+  - Architecturale
+  - Paysagère
 lieu: Métis sur mer
 auteurs: Rémi Bonin et Vincent Morrier
 documents:
