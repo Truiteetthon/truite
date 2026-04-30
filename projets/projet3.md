@@ -64,7 +64,7 @@ documents:
   - document:
       - Rendu
     date: "2024"
-    description: Rendus de l'installation proposé pour le festival des Jardins de Métis
+    description: Rendus de l'installation proposée pour le festival des Jardins de Métis
     lieu: Métis sur mer
     photos:
       - /images/Projets/Le language de l'érosion/Images/Rendus/compressed_rendu
