@@ -7,7 +7,7 @@ pratique:
   - Critique
   - Culinaire
 lieu: Bruxelles
-auteurs: Rémi Bonin, Elliot Lepeer
+auteurs: Remi Bonin et Elliot Lepeer
 documents:
   - document:
       - Numérisation
