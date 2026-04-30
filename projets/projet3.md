@@ -21,6 +21,7 @@ description: Pourquoi traduire le phénomène de l’érosion ? La séparation e
   transparents).
 année: "2024"
 lieu: Métis sur mer
+auteurs: Rémi Bonin et Vincent Morrier
 documents:
   - document:
       - Photo
