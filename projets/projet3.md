@@ -71,4 +71,17 @@ documents:
         2.png
       - /images/Projets/Le language de l'érosion/Images/Rendus/compressed_rendu
         1.jpg
+  - document:
+      - Schéma
+    date: "2024"
+    description: Schémas sensoriel de la transparence, l'ouverture et la tactilité
+      de l'installation prévus pour le festival des Jardins de Métis
+    lieu: Métis sur mer
+    photos:
+      - /images/Projets/Le language de
+        l'érosion/Images/Schémas/compressed_Transparence .png
+      - /images/Projets/Le language de
+        l'érosion/Images/Schémas/compressed_Ouverture.png
+      - /images/Projets/Le language de
+        l'érosion/Images/Schémas/compressed_Tactilite.png
 ---
