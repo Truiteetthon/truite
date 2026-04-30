@@ -11,6 +11,13 @@ body {
     margin-left: 20vw;
 }
 
+hr {
+    border: none;
+    border-top: 1px solid black;
+    margin: 10px 0;
+    width: 300px;
+}
+
 a {
     color: blue;
     text-decoration: none;
@@ -52,8 +59,8 @@ li {
     display: flex;
     flex-direction: column;
     position: relative;
-    cursor: grab;
     z-index: 1;
+    pointer-events: none; /* li ne capte plus les clics */
 }
 
 input {
@@ -128,6 +135,10 @@ p {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    pointer-events: auto;
 }
 
 .desc-titre {
@@ -148,7 +159,7 @@ p {
 
 .carousel {
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     width: 80%;
 }
 
@@ -161,6 +172,7 @@ p {
 
 .carousel-img.active {
     display: block;
+    pointer-events: auto; /* seulement l'image active est cliquable */
 }
 
 .carousel-counter {
