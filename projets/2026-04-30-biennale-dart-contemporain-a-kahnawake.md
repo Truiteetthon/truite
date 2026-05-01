@@ -73,4 +73,16 @@ documents:
       - /images/Projets/Biennales d'art
         contemporain/Images/Dessins/compressed_Capture d’écran, le 2026-04-30 à
         18.05.43.png
+  - document:
+      - Pastel
+    date: "2025"
+    description: Pastel de recherche sensible de l'implantation des pavillons sur le site
+    lieu: Kahnawà:ke
+    photos:
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Pastels/compressed_Capture d’écran, le 2026-04-30 à
+        17.44.16.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Pastels/compressed_Capture d’écran, le 2026-04-30 à
+        17.44.03.png
 ---
