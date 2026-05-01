@@ -118,4 +118,16 @@ documents:
       - /images/Projets/Biennales d'art
         contemporain/Images/Schémas/compressed_Capture d’écran, le 2026-04-30 à
         18.02.49.png
+  - document:
+      - Maquette
+    date: "2025"
+    description: Maquette en bois des différents pavillons
+    lieu: Kahnawà:ke
+    photos:
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Maquette/compressed_Capture d’écran, le 2026-04-30 à
+        18.06.14.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Maquette/compressed_Capture d’écran, le 2026-04-30 à
+        18.06.25.png
 ---
