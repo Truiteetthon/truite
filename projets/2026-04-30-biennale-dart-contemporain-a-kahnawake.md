@@ -85,4 +85,19 @@ documents:
       - /images/Projets/Biennales d'art
         contemporain/Images/Pastels/compressed_Capture d’écran, le 2026-04-30 à
         17.44.03.png
+  - document:
+      - Dessin
+    date: "2025"
+    description: Dessins en perspectives des pavillons
+    lieu: Kahnawà:ke
+    photos:
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Perspectives/compressed_Capture d’écran, le
+        2026-04-30 à 18.03.54.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Perspectives/compressed_Capture d’écran, le
+        2026-04-30 à 18.05.17.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Perspectives/compressed_Capture d’écran, le
+        2026-04-30 à 18.05.31.png
 ---
