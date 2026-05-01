@@ -11,4 +11,29 @@ pratique:
   - Architecturale
 lieu: Kahnawà:ke
 auteurs: Rémi Bonin
+documents:
+  - document:
+      - Croquis
+    date: "2025"
+    description: Croquis de différentes étapes de conception
+    lieu: Kahnawà:ke
+    photos:
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Croquis/compressed_Capture d’écran, le 2026-04-30 à
+        17.43.19.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Croquis/compressed_Capture d’écran, le 2026-04-30 à
+        17.43.29.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Croquis/compressed_Capture d’écran, le 2026-04-30 à
+        17.44.36.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Croquis/compressed_Capture d’écran, le 2026-04-30 à
+        17.44.55.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Croquis/compressed_Capture d’écran, le 2026-04-30 à
+        17.45.11.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Croquis/compressed_Capture d’écran, le 2026-04-30 à
+        18.05.57.png
 ---
