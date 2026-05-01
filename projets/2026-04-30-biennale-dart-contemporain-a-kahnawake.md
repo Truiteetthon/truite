@@ -51,4 +51,26 @@ documents:
       - /images/Projets/Biennales d'art
         contemporain/Images/Photos/compressed_Capture d’écran, le 2026-04-30 à
         17.46.12.png
+  - document:
+      - Dessin
+    date: "2025"
+    description: Implantation, plan et axonométrie des différents pavillons de la
+      biennale d'art contemporain
+    lieu: Kahnawà:ke
+    photos:
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Dessins/compressed_Capture d’écran, le 2026-04-30 à
+        18.02.32.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Dessins/compressed_Capture d’écran, le 2026-04-30 à
+        18.03.22.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Dessins/compressed_Capture d’écran, le 2026-04-30 à
+        18.06.54.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Dessins/compressed_Capture d’écran, le 2026-04-30 à
+        18.04.59.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Dessins/compressed_Capture d’écran, le 2026-04-30 à
+        18.05.43.png
 ---
