@@ -100,4 +100,22 @@ documents:
       - /images/Projets/Biennales d'art
         contemporain/Images/Perspectives/compressed_Capture d’écran, le
         2026-04-30 à 18.05.31.png
+  - document:
+      - Schéma
+    date: "2025"
+    description: Schémas d'implantation et de logique constructive
+    lieu: Kahnawà:ke
+    photos:
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Schémas/compressed_Capture d’écran, le 2026-04-30 à
+        18.01.47.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Schémas/compressed_Capture d’écran, le 2026-04-30 à
+        18.01.59.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Schémas/compressed_Capture d’écran, le 2026-04-30 à
+        18.02.10.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Schémas/compressed_Capture d’écran, le 2026-04-30 à
+        18.02.49.png
 ---
