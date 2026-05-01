@@ -36,4 +36,19 @@ documents:
       - /images/Projets/Biennales d'art
         contemporain/Images/Croquis/compressed_Capture d’écran, le 2026-04-30 à
         18.05.57.png
+  - document:
+      - Photo
+    date: "2025"
+    description: Photos du site par Joël Bonin
+    lieu: Kahnawà:ke
+    photos:
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Photos/compressed_Capture d’écran, le 2026-04-30 à
+        17.45.46.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Photos/compressed_Capture d’écran, le 2026-04-30 à
+        17.45.58.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Photos/compressed_Capture d’écran, le 2026-04-30 à
+        17.46.12.png
 ---
