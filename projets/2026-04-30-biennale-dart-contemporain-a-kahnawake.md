@@ -130,4 +130,16 @@ documents:
       - /images/Projets/Biennales d'art
         contemporain/Images/Maquette/compressed_Capture d’écran, le 2026-04-30 à
         18.06.25.png
+  - document:
+      - Rendu
+    date: "2025"
+    description: Ambiance extérieur et intérieur du pavillon d'accueil
+    lieu: Kahnawà:ke
+    photos:
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Rendu/compressed_Capture d’écran, le 2026-04-30 à
+        18.04.23.png
+      - /images/Projets/Biennales d'art
+        contemporain/Images/Rendu/compressed_Capture d’écran, le 2026-04-30 à
+        18.04.34.png
 ---
