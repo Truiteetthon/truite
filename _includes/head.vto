@@ -11,9 +11,7 @@
 {{ content }}
 
 <header>
-  <p>Conçu par <a href="/index.html">Remi Bonin</a>, ce site est a la fois un espace de presentation, mais aussi un outil de conception.
-  L'ordre d'affichage est modifie a chaque visite et les differentes images peuvent être deplacer.
-  Rassemblant mes projets, mes ressources et mes references cet espace devient un espace de <input type="text" placeholder="Search.."> travail ou l'ensemble des donnees sont issus de ma curration personnelle offrant la possibilite de creer une approche conceptuelle coherente.
+  <p>Conçu par <a href="/index.html">Remi Bonin</a>, ce site est à la fois un espace de présentation et un outil de conception. L'ordre d'affichage est modifié à chaque visite et les différentes images peuvent être déplacées. Rassemblant mes projets, mes ressources et mes références, cet espace devient un espace de travail où l'ensemble des données est issu de ma curation personnelle, offrant la possibilité de créer une approche conceptuelle cohérente.
   </p>
 
 
@@ -61,6 +59,12 @@
     <input type="radio" id="{{ lieu }}" name="lieu" value="{{ lieu }}">
     <label for="{{ lieu }}">{{ lieu }}</label><br>
   {{ /for }}
+
+    <p>Projet</p>
+    {{ for projet of search.values("projet").sort() }}
+      <input type="radio" id="{{ projet }}" name="projet" value="{{ projet }}">
+      <label for="{{ projet }}">{{ projet }}</label><br>
+    {{ /for }}
 
     <div class="space"></div>
     <p> A propos :<br>

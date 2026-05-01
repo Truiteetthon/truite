@@ -20,6 +20,12 @@ const lis = [...ul.querySelectorAll("li")];
 lis.sort(() => Math.random() - 0.5);
 lis.forEach((li) => ul.appendChild(li));
 
+// ─── Cacher les cartes projet par défaut ────────────────────────────────────
+
+document.querySelectorAll(".carte-projet").forEach((li) => {
+  li.style.display = "none";
+});
+
 // ─── Drag ───────────────────────────────────────────────────────────────────
 
 let wasDragging = false;
@@ -32,7 +38,8 @@ document.querySelectorAll("li").forEach((li) => {
   function getActiveTarget() {
     return (
       li.querySelector(".carousel-img.active") ||
-      li.querySelector(".carousel-desc.active")
+      li.querySelector(".carousel-desc.active") ||
+      li.querySelector(".carte-desc-projet")
     );
   }
 
@@ -43,7 +50,8 @@ document.querySelectorAll("li").forEach((li) => {
     const onDesc =
       e.target.closest(".carousel-desc") &&
       li.querySelector(".carousel-desc.active");
-    if (!onImg && !onDesc) return;
+    const onCarte = e.target.closest(".carte-desc-projet");
+    if (!onImg && !onDesc && !onCarte) return;
 
     e.preventDefault();
     isDragging = false;
@@ -56,7 +64,6 @@ document.querySelectorAll("li").forEach((li) => {
 
     zCounter++;
     li.style.zIndex = zCounter;
-    li.style.cursor = "grabbing";
 
     function onMove(e) {
       const dx = e.clientX - startX;
@@ -70,20 +77,12 @@ document.querySelectorAll("li").forEach((li) => {
     }
 
     function onUp() {
-      li.style.cursor = "default";
       document.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseup", onUp);
     }
 
     document.addEventListener("mousemove", onMove);
     document.addEventListener("mouseup", onUp);
-  });
-
-  li.addEventListener("mouseover", (e) => {
-    const activeImg = li.querySelector(".carousel-img.active");
-    const onActive =
-      e.target === activeImg || e.target.closest(".carousel-desc.active");
-    li.style.cursor = onActive ? "grab" : "default";
   });
 
   li.addEventListener("click", (e) => {
@@ -161,6 +160,7 @@ function getLiValues(li) {
     documents: toList(li.dataset.document),
     year: clean(li.dataset.year),
     lieu: clean(li.dataset.lieu),
+    projet: clean(li.dataset.projet),
   };
 }
 
@@ -173,20 +173,30 @@ function getActiveFilters() {
     activeDocument: val("document"),
     activeYear: val("year"),
     activeLieu: val("lieu"),
+    activeProjet: val("projet"),
   };
 }
 
 function liMatchesFilters(
   li,
-  { activeCategorie, activePratique, activeDocument, activeYear, activeLieu },
+  {
+    activeCategorie,
+    activePratique,
+    activeDocument,
+    activeYear,
+    activeLieu,
+    activeProjet,
+  },
 ) {
-  const { categorie, pratiques, documents, year, lieu } = getLiValues(li);
+  const { categorie, pratiques, documents, year, lieu, projet } =
+    getLiValues(li);
   return (
     (!activeCategorie || categorie === activeCategorie) &&
     (!activePratique || pratiques.includes(activePratique)) &&
     (!activeDocument || documents.includes(activeDocument)) &&
     (!activeYear || year === activeYear) &&
-    (!activeLieu || lieu === activeLieu)
+    (!activeLieu || lieu === activeLieu) &&
+    (!activeProjet || projet === activeProjet)
   );
 }
 
@@ -198,8 +208,8 @@ function updateAvailableFilters() {
     document.querySelectorAll(`input[name="${name}"]`).forEach((radio) => {
       const label = document.querySelector(`label[for="${radio.value}"]`);
       if (!label) return;
-      const isActive =
-        filters[`active${name.charAt(0).toUpperCase() + name.slice(1)}`];
+      const key = `active${name.charAt(0).toUpperCase() + name.slice(1)}`;
+      const isActive = filters[key];
       if (isActive) {
         label.style.opacity = radio.value === isActive ? "1" : "0.3";
       } else {
@@ -216,7 +226,6 @@ function updateAvailableFilters() {
       liMatchesFilters(li, { ...filters, activeCategorie: null })
     );
   });
-
   updateGroup("pratique", (li, val) => {
     const { pratiques } = getLiValues(li);
     return (
@@ -224,7 +233,6 @@ function updateAvailableFilters() {
       liMatchesFilters(li, { ...filters, activePratique: null })
     );
   });
-
   updateGroup("document", (li, val) => {
     const { documents } = getLiValues(li);
     return (
@@ -232,18 +240,22 @@ function updateAvailableFilters() {
       liMatchesFilters(li, { ...filters, activeDocument: null })
     );
   });
-
   updateGroup("year", (li, val) => {
     const { year } = getLiValues(li);
     return (
       year === val && liMatchesFilters(li, { ...filters, activeYear: null })
     );
   });
-
   updateGroup("lieu", (li, val) => {
     const { lieu } = getLiValues(li);
     return (
       lieu === val && liMatchesFilters(li, { ...filters, activeLieu: null })
+    );
+  });
+  updateGroup("projet", (li, val) => {
+    const { projet } = getLiValues(li);
+    return (
+      projet === val && liMatchesFilters(li, { ...filters, activeProjet: null })
     );
   });
 }
@@ -252,7 +264,14 @@ function applyFilters() {
   const filters = getActiveFilters();
 
   document.querySelectorAll("li").forEach((li) => {
-    li.style.display = liMatchesFilters(li, filters) ? "flex" : "none";
+    const isCarte = li.classList.contains("carte-projet");
+    if (isCarte) {
+      // Carte projet visible seulement si filtre projet actif ET correspond
+      li.style.display =
+        filters.activeProjet && liMatchesFilters(li, filters) ? "flex" : "none";
+    } else {
+      li.style.display = liMatchesFilters(li, filters) ? "flex" : "none";
+    }
   });
 
   // Reset labels
@@ -267,8 +286,16 @@ function applyFilters() {
     activeDocument,
     activeYear,
     activeLieu,
+    activeProjet,
   } = filters;
-  [activeCategorie, activePratique, activeDocument, activeYear, activeLieu]
+  [
+    activeCategorie,
+    activePratique,
+    activeDocument,
+    activeYear,
+    activeLieu,
+    activeProjet,
+  ]
     .filter(Boolean)
     .forEach((val) => {
       document
@@ -279,11 +306,37 @@ function applyFilters() {
   updateAvailableFilters();
 }
 
+// ─── Clic sur titre de projet → activer filtre projet ────────────────────────
+
+document.querySelectorAll(".btn-projet").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    if (wasDragging) return;
+    // e.stopPropagation() ← retirez cette ligne
+    const projet = btn.dataset.projet;
+    const radio = document.querySelector(
+      `input[name="projet"][value="${projet}"]`,
+    );
+    if (!radio) return;
+
+    if (radio.dataset.checked === "true") {
+      radio.checked = false;
+      radio.dataset.checked = "false";
+    } else {
+      document
+        .querySelectorAll('input[name="projet"]')
+        .forEach((r) => (r.dataset.checked = "false"));
+      radio.checked = true;
+      radio.dataset.checked = "true";
+    }
+    applyFilters();
+  });
+});
+
 // ─── Listeners ───────────────────────────────────────────────────────────────
 
 document
   .querySelectorAll(
-    'input[name="categorie"], input[name="pratique"], input[name="document"], input[name="year"], input[name="lieu"]',
+    'input[name="categorie"], input[name="pratique"], input[name="document"], input[name="year"], input[name="lieu"], input[name="projet"]',
   )
   .forEach((radio) => {
     radio.addEventListener("change", applyFilters);
@@ -304,6 +357,17 @@ document
 // ─── Init ────────────────────────────────────────────────────────────────────
 
 updateAvailableFilters();
+
+// ─── Popup ────────────────────────────────────────────────────────────────────
+
+var firstTime = localStorage.getItem("first_time");
+if (firstTime === null) {
+  document.querySelector(".popup")?.classList.add("active");
+  localStorage.setItem("first_time", "true");
+}
+document.querySelector("#close-popup")?.addEventListener("click", function () {
+  document.querySelector(".popup")?.classList.remove("active");
+});
 
 // ─── Switch vue ──────────────────────────────────────────────────────────────
 
@@ -330,21 +394,15 @@ function switchView(view) {
 
 function togglePile(pile) {
   const isOpen = pile.classList.contains("open");
-
   if (!isOpen) {
-    // Fermer toutes les autres piles
-    document.querySelectorAll(".projet-pile.open").forEach((p) => {
-      p.classList.remove("open");
-    });
+    document
+      .querySelectorAll(".projet-pile.open")
+      .forEach((p) => p.classList.remove("open"));
     pile.classList.add("open");
-
-    // Animation d'entrée avec délai par carte
-    const cartes = pile.querySelectorAll(".pile-carte");
-    cartes.forEach((carte, i) => {
+    pile.querySelectorAll(".pile-carte").forEach((carte, i) => {
       carte.style.transitionDelay = `${i * 60}ms`;
     });
   } else {
-    // Refermer
     const cartes = pile.querySelectorAll(".pile-carte");
     cartes.forEach((carte, i) => {
       carte.style.transitionDelay = `${(cartes.length - i) * 40}ms`;
@@ -353,16 +411,12 @@ function togglePile(pile) {
   }
 }
 
-// Clic sur pile fermée → ouvrir
-// Clic sur image dans pile ouverte → carrousel
 document.querySelectorAll(".projet-pile").forEach((pile) => {
   pile.addEventListener("click", (e) => {
     if (!pile.classList.contains("open")) {
       togglePile(pile);
       return;
     }
-
-    // Pile ouverte — clic sur image active → carouselNav
     const carte = e.target.closest(".pile-carte");
     if (!carte) return;
     const onActiveImg =
@@ -370,7 +424,6 @@ document.querySelectorAll(".projet-pile").forEach((pile) => {
       e.target.classList.contains("active");
     const onDesc = e.target.closest(".carousel-desc");
     if (!onActiveImg && !onDesc) return;
-
     carouselNav(carte);
   });
 });

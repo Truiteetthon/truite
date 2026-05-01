@@ -11,90 +11,125 @@ layout: head.vto
   </head>
   <body>
 
-      <ul>
-          {{ for post of search.pages("tag=projet", "année=desc") }}
-            {{ for doc of post.documents }}
-              {{ set docTypes = doc.document ?? [] }}
-              {{ set docPhotos = doc.photos ?? [] }}
+    <ul>
+      {{ for post of search.pages("tag=projet", "année=desc") }}
 
-              <li
-                data-categorie="{{ post.categorie }}"
-                data-pratique="{{ post.pratique |> join(',') }}"
-                data-document="{{ docTypes |> join(',') }}"
-                data-year="{{ doc.date ?? post.année }}"
-                data-lieu="{{ doc.lieu ?? post.lieu }}"
-              >
-                <div class="carousel" data-index="0">
-                  {{ for i, src of docPhotos }}
-                    <img
-                      src="{{ src }}"
-                      alt="{{ post.projet }}"
-                      class="carousel-img{{ if i === 0 }} active{{ /if }}"
-                      style="cursor: pointer;"
-                    />
-                  {{ /for }}
-
-                  <div class="carousel-desc">
-                    <div>{{ post.projet }}</div>
-                    <div>{{ doc.description }}</div><br>
-                    <hr>
-                    <div>Par: {{ post.auteurs }}</div>
-                    <div>À: {{ doc.lieu ?? post.lieu }}</div>
-                    <div>En: {{ doc.date ?? post.année }}</div>
-
-                  </div>
-                </div>
-              </li>
-            {{ /for }}
-          {{ /for }}
-      </ul>
-
-      <!-- Vue Portfolio -->
-      <div id="portfolio-view" style="display: none; padding: 5vw 5vw 5vw 28vw;">
-        {{ for post of search.pages("tag=projet", "année=desc") }}
-          <div class="projet-card">
-
-            <div class="projet-text">
+        {{# Carte de description du projet — premier élément #}}
+        <li
+          class="carte-projet"
+          data-categorie="{{ post.categorie }}"
+          data-pratique="{{ post.pratique |> join(',') }}"
+          data-document=""
+          data-year="{{ post.année }}"
+          data-lieu="{{ post.lieu }}"
+          data-projet="{{ post.projet }}"
+        >
+          <div class="carousel" data-index="-1">
+            <div class="carte-desc-projet">
               <div class="desc-titre">{{ post.projet }}</div>
+              <br>
               <div>{{ post.description }}</div>
+              <br>
+              <div>{{ post.année }} — {{ post.lieu }}</div>
+              <div>{{ post.auteurs }}</div>
+            </div>
+          </div>
+        </li>
+
+        {{# Documents du projet #}}
+        {{ for doc of post.documents }}
+          {{ set docTypes = doc.document ?? [] }}
+          {{ set docPhotos = doc.photos ?? [] }}
+
+          <li
+            data-categorie="{{ post.categorie }}"
+            data-pratique="{{ post.pratique |> join(',') }}"
+            data-document="{{ docTypes |> join(',') }}"
+            data-year="{{ doc.date ?? post.année }}"
+            data-lieu="{{ doc.lieu ?? post.lieu }}"
+            data-projet="{{ post.projet }}"
+          >
+            <div class="carousel" data-index="0">
+              {{ for i, src of docPhotos }}
+                <img
+                  src="{{ src }}"
+                  alt="{{ post.projet }}"
+                  class="carousel-img{{ if i === 0 }} active{{ /if }}"
+                  style="cursor: pointer;"
+                  loading="{{ if i === 0 }}eager{{ else }}lazy{{ /if }}"
+                />
+              {{ /for }}
+
+              <div class="carousel-desc">
+                <div>{{ post.projet }}</div>
+                <div>{{ doc.description }}</div><br>
+                <hr>
+                <div>Par: {{ post.auteurs }}</div>
+                <div>À: {{ doc.lieu ?? post.lieu }}</div>
+                <div>En: {{ doc.date ?? post.année }}</div>
+              </div>
+            </div>
+          </li>
+        {{ /for }}
+
+      {{ /for }}
+    </ul>
+
+    <!-- Vue Portfolio -->
+    <div id="portfolio-view" style="display: none; padding: 5vw 5vw 5vw 28vw;">
+      {{ for post of search.pages("tag=projet", "année=desc") }}
+        <div class="projet-card">
+
+            <div class="carte-desc-projet">
+              <div class="desc-titre">
+                <span class="btn-projet" data-projet="{{ post.projet }}" style="cursor:pointer;">
+                  {{ post.projet }}
+                </span>
+              </div>
+              <br>
+              <div>{{ post.description }}</div>
+              <br>
               <div>{{ post.année }} — {{ post.lieu }}</div>
               <div>{{ post.auteurs }}</div>
             </div>
 
-            <div class="projet-pile">
-              {{ for doc of post.documents }}
-                {{ set docTypes = doc.document ?? [] }}
-                {{ set docPhotos = doc.photos ?? [] }}
-                <div class="pile-carte"
-                     data-index="0"
-                     data-categorie="{{ post.categorie }}"
-                     data-pratique="{{ post.pratique |> join(',') }}"
-                     data-document="{{ docTypes |> join(',') }}"
-                     data-year="{{ doc.date ?? post.année }}"
-                     data-lieu="{{ doc.lieu ?? post.lieu }}">
-                  {{ for i, src of docPhotos }}
-                    <img
-                      src="{{ src }}"
-                      alt="{{ post.projet }}"
-                      class="carousel-img{{ if i === 0 }} active{{ /if }}"
-                      style="cursor: pointer;"
-                      loading="{{ if i === 0 }}eager{{ else }}lazy{{ /if }}"
-                    />
-                  {{ /for }}
-                  <div class="carousel-desc">
-                    <div>{{ post.auteurs }}</div>
-                    <div class="desc-titre">{{ post.projet }}</div>
-                    <div>{{ doc.description }}</div>
-                    <div>{{ doc.lieu ?? post.lieu }}</div>
-                    <div>{{ doc.date ?? post.année }}</div>
-                  </div>
+          <div class="projet-pile">
+            {{ for doc of post.documents }}
+              {{ set docTypes = doc.document ?? [] }}
+              {{ set docPhotos = doc.photos ?? [] }}
+              <div class="pile-carte"
+                   data-index="0"
+                   data-categorie="{{ post.categorie }}"
+                   data-pratique="{{ post.pratique |> join(',') }}"
+                   data-document="{{ docTypes |> join(',') }}"
+                   data-year="{{ doc.date ?? post.année }}"
+                   data-lieu="{{ doc.lieu ?? post.lieu }}">
+                {{ for i, src of docPhotos }}
+                  <img
+                    src="{{ src }}"
+                    alt="{{ post.projet }}"
+                    class="carousel-img{{ if i === 0 }} active{{ /if }}"
+                    style="cursor: pointer;"
+                    loading="{{ if i === 0 }}eager{{ else }}lazy{{ /if }}"
+                  />
+                {{ /for }}
+                <div class="carousel-desc">
+                  <div>{{ post.auteurs }}</div>
+                  <span class="btn-projet" data-projet="{{ post.projet }}" style="cursor:pointer;">
+                       {{ post.projet }}
+                     </span>
+                  <div>{{ doc.description }}</div>
+                  <div>{{ doc.lieu ?? post.lieu }}</div>
+                  <div>{{ doc.date ?? post.année }}</div>
                 </div>
-              {{ /for }}
-            </div>
-
+              </div>
+            {{ /for }}
           </div>
-        {{ /for }}
-      </div>
+
+        </div>
+      {{ /for }}
+    </div>
+
   </body>
 {{ content }}
 </html>

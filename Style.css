@@ -2,8 +2,8 @@ html {
     font-family: inter;
     font-variant: normal;
     font-size: 30px;
-    background-color: black;
-    color: white;
+    background-color: transparent;
+    color: black;
     background-size: cover;
 }
 
@@ -37,7 +37,7 @@ header {
     overflow-y: scroll;
     overflow-x: hidden;
     pointer-events: none; /* transparent par défaut */
-    mix-blend-mode: difference;
+    mix-blend-mode: darken;
 }
 
 header > * {
@@ -182,89 +182,40 @@ p {
     color: rgba(0, 0, 0, 0.7);
 }
 
-#portfolio-view {
-    padding: 5vw 5vw 5vw 28vw;
-}
-
-.projet-card {
+.carte-desc-projet {
     display: flex;
-    flex-direction: row;
-    gap: 60px;
-    margin-bottom: 80px;
+    flex-direction: column;
     align-items: flex-start;
-}
-
-.projet-text {
-    width: 200px;
-    flex-shrink: 0;
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-.projet-pile {
-    position: relative;
-    flex: 1;
-    height: 40vh;
+    text-align: left;
+    padding: 12px;
     cursor: pointer;
-    transition: height 0.5s ease;
-}
-
-/* Cartes empilées */
-.pile-carte {
+    width: 300px;
     position: absolute;
-    width: 35vw;
-    height: 40vh;
-    border: 1px solid black;
-    background: white;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    color: black;
+    font-size: 15px;
+    pointer-events: auto;
 }
 
-.pile-carte:nth-child(1) {
-    transform: translate(0px, 0px) rotate(-1deg);
-    z-index: 10;
-}
-.pile-carte:nth-child(2) {
-    transform: translate(4px, 4px) rotate(0.5deg);
-    z-index: 9;
-}
-.pile-carte:nth-child(3) {
-    transform: translate(8px, 8px) rotate(-0.5deg);
-    z-index: 8;
-}
-.pile-carte:nth-child(4) {
-    transform: translate(12px, 12px) rotate(1deg);
-    z-index: 7;
-}
-.pile-carte:nth-child(n + 5) {
-    transform: translate(16px, 16px) rotate(0deg);
-    z-index: 6;
+.carte-desc-projet {
+    pointer-events: auto;
+    cursor: grab;
 }
 
-/* Images dans la carte */
-.pile-carte .carousel-img {
-    display: none;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-.pile-carte .carousel-img.active {
-    display: block;
+.btn-projet {
+    pointer-events: auto;
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
 }
 
-/* Pile ouverte — cascade verticale */
-.projet-pile.open {
-    height: auto;
-    cursor: default;
+.btn-projet:hover {
+    color: black;
 }
 
-.projet-pile.open .pile-carte {
-    position: relative !important;
-    transform: translate(0, 0) rotate(0deg) !important;
-    width: 35vw;
-    height: 40vh;
-    margin-bottom: 20px;
-}
 @font-face {
     font-family: me;
     src: url("fonts/moi3.otf");
